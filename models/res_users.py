@@ -49,3 +49,24 @@ class ResUsers(models.Model):
     x_x_studio_users_internal_transfer_stock_location_count = fields.Integer(
         string='Users (Internal Transfer) count',
     )
+    # v0.0.2: the two res.users-side halves of the Studio m2m to
+    # stock.location. Fix-repair declares the reverse side (on
+    # stock.location) in models/stock_location.py:54-67 using specific
+    # relation-table names — Q50dg / bQRSA use those SAME names so
+    # both sides read/write the same relation rows. This lets Studio
+    # arch that references the fields from either direction resolve
+    # to a single set of user↔location links.
+    x_studio_many2many_field_Q50dg = fields.Many2many(
+        'stock.location',
+        relation='stock_location_users_stock_location_rel',
+        column1='user_id',
+        column2='location_id',
+        string='Inventory Locations (Stock)',
+    )
+    x_studio_many2many_field_bQRSA = fields.Many2many(
+        'stock.location',
+        relation='stock_location_users_internal_transfer_rel',
+        column1='user_id',
+        column2='location_id',
+        string='Inventory Locations (Internal Transfer)',
+    )

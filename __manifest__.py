@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Studio User-Model Migration',
-    'version': '17.0.1.0.1',
+    'version': '17.0.1.0.2',
     'summary': (
         'Ports res.users Studio customisations (custom fields + form '
         'inherit) into a proper Python module. Companion to Fix-repair, '
