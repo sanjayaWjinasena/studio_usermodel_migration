@@ -1,0 +1,338 @@
+{
+  "x_customer_group": [
+    {
+      "name": "CAC",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Cash Customers",
+      "group_type": "General"
+    },
+    {
+      "name": "CENT-ISSUE",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Center Issues",
+      "group_type": "General"
+    },
+    {
+      "name": "DISTR",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Distributors",
+      "group_type": "Distributor"
+    },
+    {
+      "name": "DLRS",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Dealers",
+      "group_type": "Dealer"
+    },
+    {
+      "name": "EXPT",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Exports",
+      "group_type": "General"
+    },
+    {
+      "name": "LEGAL",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Customers having legal issues.",
+      "group_type": "General"
+    },
+    {
+      "name": "SBU1",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "SBU1 - Inter Companies",
+      "group_type": "General"
+    },
+    {
+      "name": "SVAT-CAC",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "SVAT Registered Cash Customer",
+      "group_type": "General"
+    },
+    {
+      "name": "SVAT-CRC",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "SVAT Registered Credit Customer",
+      "group_type": "General"
+    },
+    {
+      "name": "TC-SC",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Temporary Credit - Sales Centers",
+      "group_type": "General"
+    },
+    {
+      "name": "WELFARE",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Welfare Shop-Ekala",
+      "group_type": "General"
+    },
+    {
+      "name": "CAC",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Cash Customers",
+      "group_type": "General"
+    },
+    {
+      "name": "CENT-ISSUE",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Center Issues",
+      "group_type": "General"
+    },
+    {
+      "name": "DISTR",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Distributors",
+      "group_type": "Distributor"
+    },
+    {
+      "name": "DLRS",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Dealers",
+      "group_type": "Dealer"
+    },
+    {
+      "name": "EXPT",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Exports",
+      "group_type": "General"
+    },
+    {
+      "name": "LEGAL",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Customers having legal issues.",
+      "group_type": "General"
+    },
+    {
+      "name": "SBU1",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "SBU1 - Inter Companies",
+      "group_type": "General"
+    },
+    {
+      "name": "SVAT-CAC",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "SVAT Registered Cash Customer",
+      "group_type": "General"
+    },
+    {
+      "name": "SVAT-CRC",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "SVAT Registered Credit Customer",
+      "group_type": "General"
+    },
+    {
+      "name": "TC",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Temporary Credit",
+      "group_type": "General"
+    },
+    {
+      "name": "WELFARE",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Welfare Shop-Ekala",
+      "group_type": "General"
+    },
+    {
+      "name": "COMM",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Commission Partners",
+      "group_type": "General"
+    },
+    {
+      "name": "COMM",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "Commission Partners",
+      "group_type": "General"
+    }
+  ],
+  "x_vendor_group": [
+    {
+      "name": "CA-PUR",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CASH VENDORS (PURCHASE)"
+    },
+    {
+      "name": "CA-PURCH",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CASH PURCHASING EMPLOYEES"
+    },
+    {
+      "name": "CA-SV",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CASH VENDORS (SERVICES)"
+    },
+    {
+      "name": "CR-PUR",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CREDIT VENDORS (PURCHASE)"
+    },
+    {
+      "name": "CR-SV",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CREDIT VENDORS (SERVICES)"
+    },
+    {
+      "name": "EMP-PAY",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "EMPLOYEE RELATED PAYMENTS"
+    },
+    {
+      "name": "IMP-VEN",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "IMPORT VENDORS"
+    },
+    {
+      "name": "IMP-VEN-CF",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "IMPORT CLEARING/FORWARDING AGENTS VR"
+    },
+    {
+      "name": "SBU1",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "INTER COMPANY SBU 1"
+    },
+    {
+      "name": "TRA-COM",
+      "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "TRADE COMMISSION"
+    },
+    {
+      "name": "CA-PUR",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CASH VENDORS (PURCHASE)"
+    },
+    {
+      "name": "CA-PURCH",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CASH PURCHASING EMPLOYEES"
+    },
+    {
+      "name": "CA-SV",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CASH VENDORS (SERVICES)"
+    },
+    {
+      "name": "CR-PUR",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CREDIT VENDORS (PURCHASE)"
+    },
+    {
+      "name": "CR-SV",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "CREDIT VENDORS (SERVICES)"
+    },
+    {
+      "name": "EMP-PAY",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "EMPLOYEE RELATED PAYMENTS"
+    },
+    {
+      "name": "IMP-VEN",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "IMPORT VENDORS"
+    },
+    {
+      "name": "IMP-VEN-CF",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "IMPORT CLEARING/FORWARDING AGENTS VR"
+    },
+    {
+      "name": "SBU1",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "INTER COMPANY SBU 1"
+    },
+    {
+      "name": "TRA-COM",
+      "company_name": "Jinasena (Pvt) Ltd.",
+      "sequence": 10,
+      "active": true,
+      "description": "TRADE COMMISSION"
+    }
+  ]
+}
