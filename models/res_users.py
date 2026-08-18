@@ -70,3 +70,28 @@ class ResUsers(models.Model):
         column2='location_id',
         string='Inventory Locations (Internal Transfer)',
     )
+
+    # v0.0.7: repair-flow location fields moved here from Fix-repair.
+    # The res.users form view in this module's views/res_users_views.xml
+    # references x_studio_virtual_location, which broke registry setup
+    # when studio_usermodel_migration loaded before Fix-repair.
+    # These four fields are pure res.users Studio schema -- they
+    # belong in this res.users-scoped module. Fix-repair's
+    # helpdesk.ticket related fields still resolve because
+    # studio_usermodel_migration now loads first in the graph.
+    x_studio_source_location = fields.Many2one(
+        'stock.location',
+        string='Source Location',
+    )
+    x_studio_source_location_1 = fields.Many2one(
+        'stock.location',
+        string='Source Location',
+    )
+    x_studio_virtual_location = fields.Many2one(
+        'stock.location',
+        string='Virtual Location',
+    )
+    x_studio_virtual_location_1 = fields.Many2one(
+        'stock.location',
+        string='Virtual Location',
+    )

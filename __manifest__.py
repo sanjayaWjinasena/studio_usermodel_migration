@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Studio User-Model Migration',
-    'version': '17.0.1.0.6',
+    'version': '17.0.1.0.7',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
