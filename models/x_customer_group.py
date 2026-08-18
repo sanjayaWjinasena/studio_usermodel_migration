@@ -68,3 +68,19 @@ class XCustomerGroup(models.Model):
         'x_studio_customer_group',
         string='Customers',
     )
+    # v0.0.5: Studio-auto smart-button counter of linked customers.
+    # On Clear-DB this is a Studio-generated Integer computed via a
+    # search-count on the O2M. Declaring it here keeps port parity;
+    # the compute is stubbed as a stored=False search-based method.
+    x_x_studio_customer_group__res_partner_count = fields.Integer(
+        string='Res Partner Count',
+        compute='_compute_res_partner_count',
+        store=False,
+    )
+
+    def _compute_res_partner_count(self):
+        Partner = self.env['res.partner']
+        for rec in self:
+            rec.x_x_studio_customer_group__res_partner_count = Partner.search_count(
+                [('x_studio_customer_group', '=', rec.id)]
+            )

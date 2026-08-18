@@ -39,3 +39,16 @@ class XVendorGroup(models.Model):
         'x_studio_vendor_group',
         string='Vendors',
     )
+    # v0.0.5: Studio-auto smart-button counter of linked vendors.
+    x_x_studio_vendor_group__res_partner_count = fields.Integer(
+        string='Res Partner Count',
+        compute='_compute_res_partner_count',
+        store=False,
+    )
+
+    def _compute_res_partner_count(self):
+        Partner = self.env['res.partner']
+        for rec in self:
+            rec.x_x_studio_vendor_group__res_partner_count = Partner.search_count(
+                [('x_studio_vendor_group', '=', rec.id)]
+            )
