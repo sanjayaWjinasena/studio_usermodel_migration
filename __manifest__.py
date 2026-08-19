@@ -27,7 +27,7 @@
     # schema/model-load time -- so the manifest dep was over-strict.
     # Runtime resolution via env['x_customer_group'] still works
     # because both modules end up loaded together.
-    'depends': ['base', 'hr_recruitment', 'account'],
+    'depends': ['base', 'hr_recruitment', 'account', 'studio_migrations'],
     'data': [
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
