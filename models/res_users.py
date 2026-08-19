@@ -97,6 +97,18 @@ class ResUsers(models.Model):
         string='Virtual Location',
     )
 
+    # v0.0.11: sentinels for Studio-manual fields that Wave 5A view-port
+    # surfaces from Clear-DB. Not populated on dev; declared as inert
+    # placeholders so the ported view arch validates. Fix-repair
+    # ports the actual super_user booleans (see repair_admin_groups.py).
+    x_studio_super_user = fields.Boolean(string='Super User (All Items)')
+    x_studio_super_user_melt_items = fields.Boolean(
+        string='Super User (Melt Items)',
+    )
+    x_studio_attendance_administrator = fields.Boolean(
+        string='Attendance Administrator',
+    )
+
     # v0.0.7: super-user permission booleans (moved from
     # Fix-repair/models/res_users.py). Native port of Studio
     # server action id 2544 which enforced mutual exclusion.
