@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Studio User-Model Migration',
-    'version': '17.0.1.0.8',
+    'version': '17.0.1.0.9',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -31,7 +31,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
-        'views/res_users_studio_ported.xml',
     ],
     'installable': True,
     'auto_install': False,
