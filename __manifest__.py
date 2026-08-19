@@ -31,7 +31,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
-        'views/res_users_studio_ported.xml',
+        'views/res_users_studio_ported.xml',
+    ],
     'installable': True,
     'auto_install': False,
     'application': False,
