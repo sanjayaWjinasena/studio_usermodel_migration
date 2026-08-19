@@ -1,22 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="ported_view_res_users_form_2392" model="ir.ui.view">
-    <field name="name">Odoo Studio: res.users.form customization</field>
-    <field name="model">res.users</field>
-    <field name="key">Fix-repair.view_res_users_form_2392</field>
-    <field name="type">form</field>
-    <field name="priority">99</field>
-    <field name="mode">extension</field>
-    <field name="inherit_id" ref="base.view_users_form"/>
-    <field name="arch" type="xml">
-      <data>
-        
-        
-        <!---->
-        
-        
-        
-      </data>
-    </field>
-  </record>
 </odoo>
