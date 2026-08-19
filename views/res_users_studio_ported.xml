@@ -3,18 +3,15 @@
   <record id="ported_view_res_users_form_2392" model="ir.ui.view">
     <field name="name">Odoo Studio: res.users.form customization</field>
     <field name="model">res.users</field>
+    <field name="key">Fix-repair.view_res_users_form_2392</field>
     <field name="type">form</field>
     <field name="priority">99</field>
     <field name="mode">extension</field>
     <field name="inherit_id" ref="base.view_users_form"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//button[@name='action_open_employees']" position="after">
-          
-          
-        </xpath>
-        <xpath expr="//form[1]/sheet[1]/div[not(@name)][2]/group[1]/field[@name='partner_id']" position="attributes">
-          <attribute name="invisible">(not id) or (id == False)</attribute><attribute name="readonly"/></xpath>
+        
+        
         <!---->
         <xpath expr="//field[@name='active']" position="attributes">
           <attribute name="invisible"/></xpath>
