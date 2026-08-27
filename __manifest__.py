@@ -27,6 +27,17 @@
     # schema/model-load time -- so the manifest dep was over-strict.
     # Runtime resolution via env['x_customer_group'] still works
     # because both modules end up loaded together.
+    #
+    # NOTE: studio_migrations is a real dep — it declares
+    # res.users.x_studio_attendance_administrator, which is referenced
+    # by the Odoo Studio view in the DB ("Odoo Studio: res.users.form
+    # customization"). Odoo validates the full view tree when loading
+    # this module's res_users_views.xml, so studio_migrations must be
+    # fully loaded first or that validation fails.
+    # The cycle was broken instead by removing studio_usermodel_migration
+    # from BugFix-Sales's depends (v52 of BugFix-Sales): BugFix-Sales
+    # uses nothing from studio_usermodel_migration at schema/model-load
+    # time, so that dep was the over-strict one.
     'depends': ['base', 'hr_recruitment', 'account', 'studio_migrations'],
     'data': [
         'security/ir.model.access.csv',
