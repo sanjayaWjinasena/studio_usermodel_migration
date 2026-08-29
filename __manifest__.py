@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.12',
+    'version': '17.0.1.0.13',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -27,7 +27,12 @@
     # schema/model-load time -- so the manifest dep was over-strict.
     # Runtime resolution via env['x_customer_group'] still works
     # because both modules end up loaded together.
-    'depends': ['base', 'hr_recruitment', 'account'],
+    # v0.0.12 addition: sale — the sale.order.line inverse M2O
+    #   x_studio_sales_report_type moved here from BugFix-Sales as
+    #   part of the x_sales_report_type upstream migration. `sale`
+    #   is a standard Odoo module already installed on Clear-DB;
+    #   no cycle risk.
+    'depends': ['base', 'hr_recruitment', 'account', 'sale'],
     'data': [
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
