@@ -3,5 +3,3 @@ access_x_customer_group_user,x_customer_group user,model_x_customer_group,base.g
 access_x_customer_group_system,x_customer_group system,model_x_customer_group,base.group_system,1,1,1,1
 access_x_vendor_group_user,x_vendor_group user,model_x_vendor_group,base.group_user,1,1,1,1
 access_x_vendor_group_system,x_vendor_group system,model_x_vendor_group,base.group_system,1,1,1,1
-access_x_sales_report_model_user,x_sales_report_model user,model_x_sales_report_model,base.group_user,1,1,1,1
-access_x_sales_report_type_user,x_sales_report_type user,model_x_sales_report_type,base.group_user,1,1,1,1
