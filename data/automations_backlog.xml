@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration backlog: 3 base.automations -->
+<odoo>
+
+  <record id="base_automation_208_janitha_ranasinghe" model="base.automation">
+    <field name="name">Janitha Ranasinghe</field>
+    <field name="active" eval="True"/>
+    <field name="model_id" search="[('model', '=', 'res.groups')]"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2266_janitha_ranasinghe')])]"/>
+  </record>
+
+  <record id="base_automation_312_jin_company_id_in_customer_group" model="base.automation">
+    <field name="name">JIN - Company Id in Customer Group</field>
+    <field name="active" eval="True"/>
+    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="trigger_field_ids" eval="[(6, 0, [ref('studio_usermodel_migration.field_x_customer_group__create_date')])]"/>
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2676_jin_company_id_in_customer_group')])]"/>
+  </record>
+
+  <record id="base_automation_286_jin_company_id_in_vendor_group" model="base.automation">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="active" eval="True"/>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="trigger_field_ids" eval="[(6, 0, [ref('studio_usermodel_migration.field_x_vendor_group__create_date')])]"/>
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2614_jin_company_id_in_vendor_group')])]"/>
+  </record>
+
+</odoo>

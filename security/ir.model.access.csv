@@ -3,3 +3,7 @@ access_x_customer_group_user,x_customer_group user,model_x_customer_group,base.g
 access_x_customer_group_system,x_customer_group system,model_x_customer_group,base.group_system,1,1,1,1
 access_x_vendor_group_user,x_vendor_group user,model_x_vendor_group,base.group_user,1,1,1,1
 access_x_vendor_group_system,x_vendor_group system,model_x_vendor_group,base.group_system,1,1,1,1
+access_1387_customer_group_group_user,Customer Group group_user,studio_usermodel_migration.model_x_customer_group,base.group_user,1,0,0,0
+access_1386_customer_group_group_system,Customer Group group_system,studio_usermodel_migration.model_x_customer_group,base.group_system,1,1,1,1
+access_1389_vendor_group_group_user,Vendor Group group_user,studio_usermodel_migration.model_x_vendor_group,base.group_user,1,0,0,0
+access_1388_vendor_group_group_system,Vendor Group group_system,studio_usermodel_migration.model_x_vendor_group,base.group_system,1,1,1,1

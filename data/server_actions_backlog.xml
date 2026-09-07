@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration backlog: 5 server actions (0 skipped) -->
+<odoo>
+
+  <record id="server_action_2676_jin_company_id_in_customer_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Customer Group</field>
+    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="state">code</field>
+    <field name="usage">base_automation</field>
+    <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id]]></field>
+  </record>
+
+  <record id="server_action_2614_jin_company_id_in_vendor_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="state">code</field>
+    <field name="usage">base_automation</field>
+    <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id]]></field>
+  </record>
+
+  <record id="server_action_2266_janitha_ranasinghe" model="ir.actions.server">
+    <field name="name">Janitha Ranasinghe</field>
+    <field name="model_id" search="[('model', '=', 'res.groups')]"/>
+    <field name="state">mail_post</field>
+    <field name="usage">base_automation</field>
+  </record>
+
+  <record id="server_action_2465_user_group_change_notify" model="ir.actions.server">
+    <field name="name">User Group Change - Notify</field>
+    <field name="model_id" search="[('model', '=', 'res.groups')]"/>
+    <field name="state">mail_post</field>
+    <field name="usage">base_automation</field>
+  </record>
+
+  <record id="server_action_2466_user_group_updation" model="ir.actions.server">
+    <field name="name">User Group updation</field>
+    <field name="model_id" search="[('model', '=', 'res.groups')]"/>
+    <field name="state">mail_post</field>
+    <field name="usage">base_automation</field>
+  </record>
+
+</odoo>

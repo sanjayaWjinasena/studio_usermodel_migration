@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration backlog: 2 record rules -->
+<odoo>
+
+  <record id="rule_564_jin_multi_company_customer_group" model="ir.rule">
+    <field name="name">JIN - Multi-Company - Customer Group</field>
+    <field name="model_id" ref="studio_usermodel_migration.model_x_customer_group"/>
+    <field name="domain_force">['|', ('x_studio_company_id', 'in', company_ids), ('x_studio_company_id', '=', False)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="active" eval="True"/>
+  </record>
+
+  <record id="rule_518_name_jin_multi_company_vendor_group" model="ir.rule">
+    <field name="name">Name	JIN - Multi-Company - Vendor Group</field>
+    <field name="model_id" ref="studio_usermodel_migration.model_x_vendor_group"/>
+    <field name="domain_force">['|', ('x_studio_company_id', 'in', company_ids), ('x_studio_company_id', '=', False)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="active" eval="True"/>
+  </record>
+
+</odoo>
