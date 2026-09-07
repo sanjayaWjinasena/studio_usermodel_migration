@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: 'All Models' menu tree (2 nodes) -->
+<odoo>
+
+  <menuitem id="menu_1681_all_models" name="All Models" sequence="10"/>
+  <menuitem id="menu_1682_user_group_access_rights" name="User Group - Access Rights" parent="menu_1681_all_models" sequence="10"/>
+
+</odoo>
