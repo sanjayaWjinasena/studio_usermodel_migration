@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- studio_usermodel_migration: menu sweep from routing audit (3 candidates) --><!-- Uses <menuitem> shortcut with dev-verified parent + action refs --><odoo>
+
+  <menuitem id="menu_795_vendor_groups" name="Vendor Groups" parent="purchase.menu_purchase_config" action="studio_usermodel_migration.act_window_1444_vendor_groups" sequence="2"/>
+  <menuitem id="menu_794_customer_groups" name="Customer Groups" parent="sale.menu_sale_config" action="studio_usermodel_migration.act_window_1443_customer_groups" sequence="4"/>
+  <menuitem id="menu_1861_employee_bank_accounts" name="Employee Bank Accounts" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration" action="bank-data.action_employee_bank_accounts" sequence="30"/>
+
+</odoo>

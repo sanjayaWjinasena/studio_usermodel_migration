@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.17',
+    'version': '17.0.1.0.18',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -43,6 +43,7 @@
         'data/automations_backlog.xml',
         'data/window_actions_backlog.xml',
         'data/menus_all_models.xml',
+        'data/menus_from_routing.xml',
     ],
     'installable': True,
     'auto_install': False,
