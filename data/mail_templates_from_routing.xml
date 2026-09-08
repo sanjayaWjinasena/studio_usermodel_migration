@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Studio mail templates (parity port; may not be functional) -->
+<odoo>
+  <data noupdate="1">
+
+    <record id="mail_template_55_janitha_ranasinghe" model="mail.template">
+      <field name="name">Janitha Ranasinghe</field>
+      <field name="model_id" ref="base.model_res_groups"/>
+      <field name="subject">Access Rights have Changed</field>
+      <field name="email_from">janitha.r@jinasena.com.lk</field>
+      <field name="email_to">rohana.b@jinasena.com.lk;</field>
+      <field name="auto_delete" eval="True"/>
+      <field name="body_html" type="html"><p style="caret-color:#37352f;position:relative;margin:0px 0 12px 0;box-sizing:border-box;">Access Rights have Changed.....<br/></p></field>
+    </record>
+
+    <record id="mail_template_74_user_group_updation" model="mail.template">
+      <field name="name">User Group Updation</field>
+      <field name="model_id" ref="base.model_res_groups"/>
+      <field name="subject">Access rights amended</field>
+      <field name="email_from">rohana.b@jinasena.com.lk</field>
+      <field name="email_to">rohana1999@gmail.com</field>
+      <field name="body_html" type="html"><p style="margin:0px 0 12px 0;box-sizing:border-box;">User Group rights updated,</p></field>
+    </record>
+
+  </data>
+</odoo>
