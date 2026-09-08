@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.19',
+    'version': '17.0.1.0.20',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -45,6 +45,7 @@
         'data/menus_all_models.xml',
         'data/menus_from_routing.xml',
         'data/mail_templates_from_routing.xml',
+        'data/server_actions_gap.xml',
     ],
     'installable': True,
     'auto_install': False,
