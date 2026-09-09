@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Phase D4 - Studio-created security groups -->
+<odoo>
+  <data>
+
+    <record id="group_studio_518_rohana" model="res.groups">
+      <field name="name">Rohana</field>
+      <field name="category_id" ref="base.module_category_extra"/>
+    </record>
+
+  </data>
+</odoo>
