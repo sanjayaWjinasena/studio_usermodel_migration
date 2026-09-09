@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- studio_usermodel_migration: 5 ir.default records routed from Phase D2 sweep -->
-<odoo>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- studio_usermodel_migration: 5 ir.default records routed from Phase D2 sweep --><odoo>
   <data noupdate="1">
 
     <record id="default_213_x_customer_group_x_active" model="ir.default">
@@ -23,10 +22,5 @@
       <field name="json_value">10</field>
     </record>
 
-    <record id="default_230_x_customer_group_x_studio_group_type" model="ir.default">
-      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__x_studio_group_type"/>
-      <field name="json_value">"General"</field>
-    </record>
-
-  </data>
+    <!-- DROPPED default_230_x_customer_group_x_studio_group_type: selection default (defer to user via UI) --></data>
 </odoo>
