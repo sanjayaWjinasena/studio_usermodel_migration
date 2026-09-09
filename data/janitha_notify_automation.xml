@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Phase D6 - Janitha Ranasinghe automation workaround -->
+<odoo>
+
+
+  <record id="server_action_2266_janitha_ranasinghe" model="ir.actions.server">
+    <field name="name">Janitha Ranasinghe</field>
+    <field name="model_id" ref="base.model_res_groups"/>
+    <field name="state">code</field>
+    <field name="code"><![CDATA[
+# Phase D6 workaround: res.groups lacks mail.thread so state='mail_post' fails.
+# Replaced with direct mail.mail create + send. Preserves the "notify Rohana
+# when access rights change" behavior from CDB's Studio automation.
+env['mail.mail'].create({
+    'subject': 'Access Rights have Changed',
+    'body_html': '<p>Access Rights have Changed on group <strong>%s</strong>.</p>' % record.name,
+    'email_from': 'janitha.r@jinasena.com.lk',
+    'email_to': 'rohana.b@jinasena.com.lk',
+    'auto_delete': True,
+}).send()
+]]></field>
+  </record>
+
+  <record id="base_automation_208_janitha_ranasinghe" model="base.automation">
+    <field name="name">Janitha Ranasinghe</field>
+    <field name="active" eval="True"/>
+    <field name="model_id" ref="base.model_res_groups"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2266_janitha_ranasinghe')])]"/>
+  </record>
+
+</odoo>
