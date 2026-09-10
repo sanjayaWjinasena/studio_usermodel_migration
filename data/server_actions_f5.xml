@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Phase F5 - 2 server actions -->
+<odoo>
+  <record id="sa_f5_x_customer_group_jin_company_id_in_customer_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Customer Group</field>
+    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="state">code</field>
+    <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id]]></field>
+    <field name="usage">base_automation</field>
+    <field name="binding_view_types">list,form</field>
+  </record>
+  <record id="sa_f5_x_vendor_group_jin_company_id_in_vendor_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="state">code</field>
+    <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id]]></field>
+    <field name="usage">base_automation</field>
+    <field name="binding_view_types">list,form</field>
+  </record>
+</odoo>
