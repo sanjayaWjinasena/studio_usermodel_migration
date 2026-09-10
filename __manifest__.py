@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.24',
+    'version': '17.0.1.0.25',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '

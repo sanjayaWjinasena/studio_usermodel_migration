@@ -12,3 +12,6 @@ from . import res_partner
 # When we re-attempt, the plan is: (1) reproduce on a scratch DB
 # outside of production, (2) diagnose exact setup-order behavior,
 # (3) find safe reintroduction path.
+
+from . import x_customer_group_gap
+from . import x_vendor_group_gap
