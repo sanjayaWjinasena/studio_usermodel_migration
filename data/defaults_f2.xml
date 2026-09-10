@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Phase F2 - 1 defaults -->
+<odoo noupdate="1">
+  <record id="default_studio_usermodel_migration_field_x_customer_group__general" model="ir.default">
+    <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__x_studio_group_type"/>
+    <field name="json_value">"General"</field>
+  </record>
+</odoo>
