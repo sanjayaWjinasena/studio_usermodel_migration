@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.25',
+    'version': '17.0.1.0.26',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -49,6 +49,8 @@
         'data/ir_defaults_gap.xml',
         'data/security_groups.xml',
         'data/janitha_notify_automation.xml',
+        'views/x_customer_group_e_views.xml',
+        'views/x_vendor_group_e_views.xml',
     ],
     'installable': True,
     'auto_install': False,
