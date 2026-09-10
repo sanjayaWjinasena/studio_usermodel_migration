@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Phase F6 - 2 menus -->
+<odoo>
+  <menuitem id="menu_f6_vendor_groups" name="Vendor Groups" parent="purchase.menu_purchase_config" action="studio_usermodel_migration.act_window_1444_vendor_groups" sequence="2"/>
+  <menuitem id="menu_f6_customer_groups" name="Customer Groups" parent="sale.menu_sale_config" action="studio_usermodel_migration.act_window_1443_customer_groups" sequence="4"/>
+</odoo>
