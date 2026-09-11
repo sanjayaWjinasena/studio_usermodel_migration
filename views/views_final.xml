@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: Views final - 4 remaining views -->
+<odoo>
+  <data>
+    <record id="view_final_x_customer_group_odoo_studio_default_form_view_for_x_customer_group_customiza" model="ir.ui.view">
+      <field name="name">Odoo Studio: Default form view for x_customer_group customization</field>
+      <field name="model">x_customer_group</field>
+      <field name="type">form</field>
+      <field name="priority">99</field>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_3114_default_form_view_for_x_customer_group_e"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <data>
+  <xpath expr="//widget[@name='web_ribbon']" position="before">
+    <div name="button_box" class="oe_button_box">
+      <button class="oe_stat_button" icon="fa-sitemap" type="action" name="1447" invisible="x_x_studio_customer_group__res_partner_count == 0">
+        <field widget="statinfo" name="x_x_studio_customer_group__res_partner_count" string="Customers"/>
+      </button>
+    </div>
+  </xpath>
+  <xpath expr="//field[@name='x_name']" position="attributes">
+    <attribute name="string">Code</attribute>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_36e52f_left']" position="inside">
+    <field name="x_studio_description" string="Description"/>
+    <field name="x_studio_payment_term" string="Payment Term" required="1"/>
+    <field name="x_studio_receivable_account" string="Receivable Account" required="1"/>
+    <field name="x_studio_group_type" string="Group Type" required="1"/>
+    <field name="x_studio_company_id" string="Company" force_save="True" readonly="1"/>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_36e52f']" position="after">
+    <notebook name="studio_notebook_NLBUK">
+      <page string="Linked Customers" name="studio_page_NLBUK" invisible="x_x_studio_customer_group__res_partner_count == 0">
+        <field name="x_studio_one2many_field_hfDGm" string="Customers">
+          <tree string="Contacts" sample="1" multi_edit="1" create="false" delete="false" edit="false">
+            <field name="name"/>
+            <field name="x_studio_payment_method"/>
+            <field name="credit"/>
+          </tree>
+        </field>
+      </page>
+    </notebook>
+  </xpath>
+</data>
+      </field>
+    </record>
+
+    <record id="view_final_x_vendor_group_odoo_studio_default_form_view_for_x_vendor_group_customizati" model="ir.ui.view">
+      <field name="name">Odoo Studio: Default form view for x_vendor_group customization</field>
+      <field name="model">x_vendor_group</field>
+      <field name="type">form</field>
+      <field name="priority">99</field>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_3120_default_form_view_for_x_vendor_group_e"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <data>
+  <xpath expr="//widget[@name='web_ribbon']" position="before">
+    <div name="button_box" class="oe_button_box">
+      <button class="oe_stat_button" icon="fa-sitemap" type="action" name="1448" invisible="x_x_studio_vendor_group__res_partner_count == 0">
+        <field widget="statinfo" name="x_x_studio_vendor_group__res_partner_count" string="Vendors"/>
+      </button>
+    </div>
+  </xpath>
+  <xpath expr="//field[@name='x_name']" position="attributes">
+    <attribute name="string">Code</attribute>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_ac9527_left']" position="inside">
+    <field name="x_studio_description" string="Description"/>
+    <field name="x_studio_payment_term" string="Payment Term"/>
+    <field name="x_studio_payable_account" string="Payable Account"/>
+    <field name="x_studio_company_id"/>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_ac9527']" position="after">
+    <notebook name="studio_notebook_lED9i">
+      <page string="Linked Vendors" name="studio_page_lED9i" invisible="x_x_studio_vendor_group__res_partner_count == 0">
+        <field name="x_studio_one2many_field_5cEfV" string="Vendors">
+          <tree string="Contacts" sample="1" multi_edit="1" create="false" edit="false" delete="false">
+            <field name="name"/>
+            <field name="property_supplier_payment_term_id"/>
+            <field name="debit"/>
+          </tree>
+        </field>
+      </page>
+    </notebook>
+  </xpath>
+</data>
+      </field>
+    </record>
+
+    <record id="view_final_x_customer_group_odoo_studio_default_list_view_for_x_customer_group_customiza" model="ir.ui.view">
+      <field name="name">Odoo Studio: Default list view for x_customer_group customization</field>
+      <field name="model">x_customer_group</field>
+      <field name="type">tree</field>
+      <field name="priority">99</field>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_3113_default_list_view_for_x_customer_group_e"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <data>
+  <xpath expr="//field[@name='x_studio_sequence']" position="attributes">
+    <attribute name="column_invisible">1</attribute></xpath>
+  <xpath expr="//field[@name='x_name']" position="after">
+    <field name="x_studio_description"/>
+    <field name="x_studio_payment_term"/>
+    <field name="x_studio_group_type"/>
+    <field name="x_studio_receivable_account"/>
+  </xpath>
+</data>
+      </field>
+    </record>
+
+    <record id="view_final_x_vendor_group_odoo_studio_default_list_view_for_x_vendor_group_customizati" model="ir.ui.view">
+      <field name="name">Odoo Studio: Default list view for x_vendor_group customization</field>
+      <field name="model">x_vendor_group</field>
+      <field name="type">tree</field>
+      <field name="priority">99</field>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_3119_default_list_view_for_x_vendor_group_e"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <data>
+  <xpath expr="//field[@name='x_studio_sequence']" position="attributes">
+    <attribute name="column_invisible">1</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_name']" position="after">
+    <field name="x_studio_description"/>
+    <field name="x_studio_payment_term" optional="show"/>
+    <field name="x_studio_payable_account"/>
+    <field optional="show" name="x_studio_company_id" string="Company"/>
+  </xpath>
+</data>
+      </field>
+    </record>
+
+  </data>
+</odoo>
