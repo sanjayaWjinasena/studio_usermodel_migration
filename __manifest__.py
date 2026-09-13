@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.35',
+    'version': '17.0.1.0.36',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -35,6 +35,7 @@
     # diagnose offline.
     'depends': ['base', 'hr_recruitment', 'account'],
     'data': [
+        'data/defaults_final.xml',
         'views/views_final.xml',
         'data/rules_f7.xml',
         'data/menus_f6.xml',
