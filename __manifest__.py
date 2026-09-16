@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.49',
+    'version': '17.0.1.0.50',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -33,7 +33,7 @@
     # during related-field setup) and blocked all further upgrades
     # on the env. Reverted here so the env can move again while we
     # diagnose offline.
-    'depends': ['base', 'hr_recruitment', 'account'],
+    'depends': ['base', 'hr_recruitment', 'account', 'bank-data'],
     'data': [
         'data/defaults_final.xml',
         'data/rules_f7.xml',
