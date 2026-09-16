@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.46',
+    'version': '17.0.1.0.47',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -38,7 +38,6 @@
         'data/defaults_final.xml',
         'views/views_final.xml',
         'data/rules_f7.xml',
-        'data/menus_f6.xml',
         'data/server_actions_f5.xml',
         'data/defaults_f2.xml',
         'security/ir.model.access.csv',
@@ -48,8 +47,6 @@
         'data/server_actions_backlog.xml',
         'data/automations_backlog.xml',
         'data/window_actions_backlog.xml',
-        'data/menus_all_models.xml',
-        'data/menus_from_routing.xml',
         'data/mail_templates_from_routing.xml',
         'data/server_actions_gap.xml',
         'data/ir_defaults_gap.xml',
@@ -57,7 +54,10 @@
         'data/janitha_notify_automation.xml',
         'views/x_customer_group_e_views.xml',
         'views/x_vendor_group_e_views.xml',
-    ],
+        'data/menus_f6.xml',
+        'data/menus_all_models.xml',
+        'data/menus_from_routing.xml',
+],
     'installable': True,
     'auto_install': False,
     'application': False,
