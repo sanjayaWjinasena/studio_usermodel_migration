@@ -9,4 +9,3 @@ access_1389_vendor_group_group_user,Vendor Group group_user,studio_usermodel_mig
 access_1388_vendor_group_group_system,Vendor Group group_system,studio_usermodel_migration.model_x_vendor_group,base.group_system,1,1,1,1
 access_1802_vendors,Vendors,studio_usermodel_migration.model_x_vendor_group,,1,1,1,1
 
-access_g_vendors_x_vendor_group_accounting_jin_accountexecutive,Vendors,model_x_vendor_group,BugFix-Studio-Misc.group_g_accounting_jin_accountexecutive,1,1,1,1
