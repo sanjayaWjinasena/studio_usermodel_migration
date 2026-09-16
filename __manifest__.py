@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.47',
+    'version': '17.0.1.0.48',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -36,12 +36,11 @@
     'depends': ['base', 'hr_recruitment', 'account'],
     'data': [
         'data/defaults_final.xml',
-        'views/views_final.xml',
         'data/rules_f7.xml',
         'data/server_actions_f5.xml',
         'data/defaults_f2.xml',
-        'security/ir.model.access.csv',
         'views/res_users_views.xml',
+        'security/ir.model.access.csv',
         'views/res_users_studio_ported.xml',
         'data/record_rules.xml',
         'data/server_actions_backlog.xml',
@@ -54,10 +53,11 @@
         'data/janitha_notify_automation.xml',
         'views/x_customer_group_e_views.xml',
         'views/x_vendor_group_e_views.xml',
+        'views/views_final.xml',
         'data/menus_f6.xml',
         'data/menus_all_models.xml',
         'data/menus_from_routing.xml',
-],
+    ],
     'installable': True,
     'auto_install': False,
     'application': False,
