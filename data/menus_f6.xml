@@ -6,4 +6,10 @@
   <record id="menu_f6_customer_groups" model="ir.ui.menu">
     <field name="active" eval="False"/>
   </record>
+  <!-- v0.0.9: Vendor Groups duplicate — menu_795_vendor_groups (CDB-matching)
+       is the twin to keep under Configuration. This f6-prefix version is
+       the older Studio-routing extract stub. Companion to BugFix-Purchase v161. -->
+  <record id="menu_f6_vendor_groups" model="ir.ui.menu">
+    <field name="active" eval="False"/>
+  </record>
 </odoo>
