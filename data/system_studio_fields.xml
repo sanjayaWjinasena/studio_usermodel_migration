@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Studio fields on system tables (base.automation, ir.rule, ir.model.access).
+
+    Shipped as `ir.model.fields` records with state='manual' — this is the
+    same shape Odoo Studio itself uses. ir.model.fields.create() runs
+    `ALTER TABLE ... ADD COLUMN` internally, and the field ONLY registers
+    in the Python ORM AFTER this XML loads. That means:
+
+    - On a code-pull without `-u`, Python doesn't know about the fields.
+      System-code SELECTs on base.automation / ir.rule / ir.model.access
+      exclude the columns → no "column does not exist" crash.
+    - On install/upgrade, this XML runs → ALTER TABLE runs → column
+      created → field registered → next request works.
+
+    Attempted earlier via `class Foo(models.Model): _inherit = ...` with
+    Python fields (state='base'). That crashes on code-pull-without-upgrade
+    because base_automation._register_hook + ir.rule._compute_domain
+    SELECT all stored columns at registry init / every session_info.
+    See v0.53 → v0.55 emergency-revert commits for the crash traces.
+-->
+<odoo>
+    <data noupdate="1">
+
+        <!-- ============================================================
+             base.automation
+             ============================================================ -->
+        <record id="field_base_automation_x_studio_comments" model="ir.model.fields">
+            <field name="name">x_studio_comments</field>
+            <field name="model">base.automation</field>
+            <field name="model_id" ref="base_automation.model_base_automation"/>
+            <field name="ttype">char</field>
+            <field name="field_description">Comments</field>
+            <field name="state">manual</field>
+            <field name="store" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_base_automation_x_studio_status" model="ir.model.fields">
+            <field name="name">x_studio_status</field>
+            <field name="model">base.automation</field>
+            <field name="model_id" ref="base_automation.model_base_automation"/>
+            <field name="ttype">selection</field>
+            <field name="field_description">Status</field>
+            <field name="state">manual</field>
+            <field name="store" eval="True"/>
+            <field name="copied" eval="True"/>
+            <field name="selection">[('None', 'None'), ('Active in V15', 'Active in V15'), ('Archived in V15', 'Archived in V15'), ('Reactivated in V15', 'Reactivated in V15')]</field>
+        </record>
+
+        <!-- ============================================================
+             ir.rule
+             ============================================================ -->
+        <record id="field_ir_rule_x_studio_description" model="ir.model.fields">
+            <field name="name">x_studio_description</field>
+            <field name="model">ir.rule</field>
+            <field name="model_id" ref="base.model_ir_rule"/>
+            <field name="ttype">text</field>
+            <field name="field_description">Description</field>
+            <field name="state">manual</field>
+            <field name="store" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <!-- ============================================================
+             ir.model.access
+             ============================================================ -->
+        <record id="field_ir_model_access_x_studio_user_name" model="ir.model.fields">
+            <field name="name">x_studio_user_name</field>
+            <field name="model">ir.model.access</field>
+            <field name="model_id" ref="base.model_ir_model_access"/>
+            <field name="ttype">char</field>
+            <field name="field_description">User Name</field>
+            <field name="state">manual</field>
+            <field name="readonly" eval="True"/>
+            <field name="store" eval="True"/>
+        </record>
+
+        <record id="field_ir_model_access_x_studio_number_of_users" model="ir.model.fields">
+            <field name="name">x_studio_number_of_users</field>
+            <field name="model">ir.model.access</field>
+            <field name="model_id" ref="base.model_ir_model_access"/>
+            <field name="ttype">many2many</field>
+            <field name="field_description">Users</field>
+            <field name="relation">res.users</field>
+            <field name="state">manual</field>
+            <field name="readonly" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
