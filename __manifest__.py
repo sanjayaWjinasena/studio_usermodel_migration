@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.57',
+    'version': '17.0.1.0.58',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -56,6 +56,7 @@
         'views/x_customer_group_e_views.xml',
         'views/x_vendor_group_e_views.xml',
         'views/views_final.xml',
+        'views/res_groups_studio_tree.xml',
         'data/menus_f6.xml',
         'data/menus_all_models.xml',
         'data/menus_from_routing.xml',
