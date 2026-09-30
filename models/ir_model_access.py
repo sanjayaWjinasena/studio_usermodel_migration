@@ -1,20 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Studio field ports on ir.model.access.
+"""Studio field port on ir.model.access — DISABLED in v0.55.
 
-Two readonly display/reporting fields Studio added to ACL rows on CDB
-to make the access-rights list view more searchable — user_name is
-the group's members' logins concatenated, number_of_users is the M2M
-of those users. Both are read-only; no compute defined by Studio.
+Preemptive removal after ir.rule + base.automation crashed with the same
+pattern. ir.model.access is queried whenever any ACL check runs (i.e.,
+constantly). Adding a stored column without a prior ALTER TABLE would
+crash on the next admin request.
+
+Removed to keep the server stable. Re-ship via safer path (see
+ir_rule.py comment).
 """
-from odoo import fields, models
-
-
-class IrModelAccess(models.Model):
-    _inherit = 'ir.model.access'
-
-    x_studio_user_name = fields.Char(string='User Name', readonly=True)
-    x_studio_number_of_users = fields.Many2many(
-        'res.users',
-        string='Users',
-        readonly=True,
-    )
