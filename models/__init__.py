@@ -3,6 +3,9 @@ from . import res_users
 from . import x_customer_group
 from . import x_vendor_group
 from . import res_partner
+from . import base_automation
+from . import ir_model_access
+from . import ir_rule
 # v0.0.14: reverted x_sales_report_type/_model migration - it triggered
 # a KeyError during Odoo registry.setup_models on repair-test-101 that
 # blocked ALL module upgrades. Root cause under investigation. The 5
