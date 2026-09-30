@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- studio_usermodel_migration: 1 previously-DROPPED ir.default records now re-shippable (selection options ported since original drop) -->
+<!-- studio_usermodel_migration: 1 ir.default records ported from CDB. -->
 <odoo>
   <data noupdate="1">
 
