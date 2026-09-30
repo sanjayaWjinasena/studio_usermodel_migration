@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- studio_usermodel_migration: 1 previously-DROPPED ir.default records now re-shippable (selection options ported since original drop) -->
+<odoo>
+  <data noupdate="1">
+
+    <record id="default_230_x_customer_group_x_studio_group_type" model="ir.default">
+      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__x_studio_group_type"/>
+      <field name="json_value">"General"</field>
+    </record>
+  </data>
+</odoo>

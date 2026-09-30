@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.56',
+    'version': '17.0.1.0.57',
     'post_init_hook': 'post_init_hook',
     'summary': (
         'Ports res.users Studio customisations + customer/vendor group '
@@ -50,6 +50,7 @@
         'data/mail_templates_from_routing.xml',
         'data/server_actions_gap.xml',
         'data/ir_defaults_gap.xml',
+        'data/ir_defaults_unblocked.xml',
         'data/security_groups.xml',
         'data/janitha_notify_automation.xml',
         'views/x_customer_group_e_views.xml',
