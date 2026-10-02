@@ -24,6 +24,12 @@ from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
+# NOTE (v1.0.60): the Many2one(s) x_studio_customer_group2 / x_studio_many2one_field_3LBKs /
+#   x_studio_many2one_field_9xxxo / x_studio_many2one_field_V9cmo (-> x_customer_groups) were MOVED to BugFix-Studio-Misc v0.0.112 models/res_users.py.
+# Their comodel is owned by a DOWNSTREAM module; declared here they were
+# `_unknown` for the whole upgrade-mode registry build (see BugFix-Purchase
+# models/upstream_link_fields.py). Do NOT re-add them here.
+
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
@@ -164,17 +170,13 @@ class ResUsers(models.Model):
     x_studio_created_date_1 = fields.Date(string='X Studio Created Date 1')
     x_studio_credit_limit = fields.Float(string='Credit Limit')
     x_studio_customer_group1 = fields.Many2one('x_customer_group', string='Customer Group1')
-    x_studio_customer_group2 = fields.Many2one('x_customer_groups', string='Customer Group2')
     x_studio_date_field_Gq9rN = fields.Date(string='New Date')
     x_studio_date_field_TBq7w = fields.Date(string='New Date')
     x_studio_float_field_73nGS = fields.Float(string='New Decimal')
     x_studio_float_field_zLCsm = fields.Float(string='New Decimal')
     x_studio_mandatory_bank_gu = fields.Boolean(string='Mandatory Bank Gu')
     x_studio_many2many_field_f1lwc = fields.Many2many('res.partner', string='Contact')
-    x_studio_many2one_field_3LBKs = fields.Many2one('x_customer_groups', string='Group')
     x_studio_many2one_field_3xHed = fields.Many2one('res.partner', string='Contact')
-    x_studio_many2one_field_9xxxo = fields.Many2one('x_customer_groups', string='Customer Groups XXX')
-    x_studio_many2one_field_V9cmo = fields.Many2one('x_customer_groups', string='Customer Groups')
     x_studio_many2one_field_hl9yL = fields.Many2one('x_customer_group', string='Customer Group')
     x_studio_many2one_field_jhSr4 = fields.Many2one('res.partner', string='Contact')
     x_studio_many2one_field_pbZO1 = fields.Many2one('res.partner', string='Contact')
