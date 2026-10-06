@@ -1,0 +1,330 @@
+{
+"access_1386_customer_group_group_system": {
+"ir.model.access": [
+[
+1386,
+"2021-11-25 04:26:49"
+]
+]
+},
+"access_1387_customer_group_group_user": {
+"ir.model.access": [
+[
+1387,
+"2021-11-25 04:26:49"
+]
+]
+},
+"access_1388_vendor_group_group_system": {
+"ir.model.access": [
+[
+1388,
+"2021-11-25 05:05:43"
+]
+]
+},
+"access_1389_vendor_group_group_user": {
+"ir.model.access": [
+[
+1389,
+"2021-11-25 05:05:43"
+]
+]
+},
+"access_1802_vendors": {
+"ir.model.access": [
+[
+1802,
+"2023-06-29 03:40:32"
+]
+]
+},
+"act_window_1443_customer_groups": {
+"ir.actions.act_window": [
+[
+1443,
+"2021-11-25 04:26:49"
+]
+]
+},
+"act_window_1444_vendor_groups": {
+"ir.actions.act_window": [
+[
+1444,
+"2021-11-25 05:05:43"
+]
+]
+},
+"base_automation_208_janitha_ranasinghe": {
+"base.automation": [
+[
+208,
+"2023-07-06 02:08:49"
+]
+]
+},
+"base_automation_286_jin_company_id_in_vendor_group": {
+"base.automation": [
+[
+286,
+"2024-07-11 08:23:24"
+]
+]
+},
+"base_automation_312_jin_company_id_in_customer_group": {
+"base.automation": [
+[
+312,
+"2024-07-17 16:32:56"
+]
+]
+},
+"default_213_x_customer_group_x_active": {
+"ir.default": [
+[
+213,
+"2021-11-25 04:26:49"
+]
+]
+},
+"default_214_x_customer_group_x_studio_sequence": {
+"ir.default": [
+[
+214,
+"2021-11-25 04:26:49"
+]
+]
+},
+"default_215_x_vendor_group_x_active": {
+"ir.default": [
+[
+215,
+"2021-11-25 05:05:43"
+]
+]
+},
+"default_216_x_vendor_group_x_studio_sequence": {
+"ir.default": [
+[
+216,
+"2021-11-25 05:05:43"
+]
+]
+},
+"default_230_x_customer_group_x_studio_group_type": {
+"ir.default": [
+[
+230,
+"2021-12-08 05:22:50"
+]
+]
+},
+"mail_template_55_janitha_ranasinghe": {
+"mail.template": [
+[
+55,
+"2023-07-06 02:05:36"
+]
+]
+},
+"mail_template_74_user_group_updation": {
+"mail.template": [
+[
+74,
+"2024-01-10 22:49:31"
+]
+]
+},
+"menu_1681_all_models": {
+"ir.ui.menu": [
+[
+1681,
+"2025-05-22 05:30:05"
+]
+]
+},
+"menu_1682_user_group_access_rights": {
+"ir.ui.menu": [
+[
+1682,
+"2025-05-22 05:30:05"
+]
+]
+},
+"menu_1861_employee_bank_accounts": {
+"ir.ui.menu": [
+[
+1861,
+"2026-04-08 08:14:33"
+]
+]
+},
+"menu_794_customer_groups": {
+"ir.ui.menu": [
+[
+794,
+"2021-11-25 04:26:49"
+]
+]
+},
+"menu_795_vendor_groups": {
+"ir.ui.menu": [
+[
+795,
+"2021-11-25 05:05:43"
+]
+]
+},
+"ported_view_res_users_form_2392": {
+"ir.ui.view": [
+[
+2392,
+"2021-06-16 06:15:42"
+]
+]
+},
+"rule_518_name_jin_multi_company_vendor_group": {
+"ir.rule": [
+[
+518,
+"2024-07-11 08:24:53"
+]
+]
+},
+"rule_564_jin_multi_company_customer_group": {
+"ir.rule": [
+[
+564,
+"2024-07-17 16:33:34"
+]
+]
+},
+"rule_f7_x_customer_group_jin_multi_company_customer_group": {
+"ir.rule": [
+[
+564,
+"2024-07-17 16:33:34"
+]
+]
+},
+"rule_f7_x_vendor_group_name_jin_multi_company_vendor_group": {
+"ir.rule": [
+[
+518,
+"2024-07-11 08:24:53"
+]
+]
+},
+"sa_f5_x_customer_group_jin_company_id_in_customer_group": {
+"ir.actions.server": [
+[
+2676,
+"2024-07-17 16:32:56"
+]
+]
+},
+"sa_f5_x_vendor_group_jin_company_id_in_vendor_group": {
+"ir.actions.server": [
+[
+2614,
+"2024-07-11 08:23:24"
+]
+]
+},
+"server_action_2266_janitha_ranasinghe": {
+"ir.actions.server": [
+[
+2266,
+"2023-07-06 02:08:49"
+]
+]
+},
+"server_action_2614_jin_company_id_in_vendor_group": {
+"ir.actions.server": [
+[
+2614,
+"2024-07-11 08:23:24"
+]
+]
+},
+"server_action_2676_jin_company_id_in_customer_group": {
+"ir.actions.server": [
+[
+2676,
+"2024-07-17 16:32:56"
+]
+]
+},
+"view_3113_default_list_view_for_x_customer_group_e": {
+"ir.ui.view": [
+[
+3113,
+"2021-11-25 04:26:49"
+]
+]
+},
+"view_3114_default_form_view_for_x_customer_group_e": {
+"ir.ui.view": [
+[
+3114,
+"2021-11-25 04:26:49"
+]
+]
+},
+"view_3115_default_search_view_for_x_customer_group_e": {
+"ir.ui.view": [
+[
+3115,
+"2021-11-25 04:26:49"
+]
+]
+},
+"view_3119_default_list_view_for_x_vendor_group_e": {
+"ir.ui.view": [
+[
+3119,
+"2021-11-25 05:05:43"
+]
+]
+},
+"view_3120_default_form_view_for_x_vendor_group_e": {
+"ir.ui.view": [
+[
+3120,
+"2021-11-25 05:05:43"
+]
+]
+},
+"view_3121_default_search_view_for_x_vendor_group_e": {
+"ir.ui.view": [
+[
+3121,
+"2021-11-25 05:05:43"
+]
+]
+},
+"view_final_x_customer_group_odoo_studio_default_list_view_for_x_customer_group_customiza": {
+"ir.ui.view": [
+[
+3117,
+"2021-11-25 04:38:40"
+]
+]
+},
+"view_final_x_vendor_group_odoo_studio_default_form_view_for_x_vendor_group_customizati": {
+"ir.ui.view": [
+[
+3122,
+"2021-11-25 05:09:12"
+]
+]
+},
+"view_final_x_vendor_group_odoo_studio_default_list_view_for_x_vendor_group_customizati": {
+"ir.ui.view": [
+[
+3123,
+"2021-11-25 05:11:32"
+]
+]
+}
+}
