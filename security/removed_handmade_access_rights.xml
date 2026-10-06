@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- studio_usermodel_migration: access rights removed on 2026-10-06. They were entered by hand on production (Settings > Technical > Access Rights), which makes them environment data, not repo functionality; the port had also dropped their group, so they applied to every user. Kept here, commented out, so any of them can be brought back. Nothing in this file is loaded. -->
+<odoo>
+<!-- REMOVED access_1802_vendors (1111): hand-made on production (hand-made (__export__)); the port had dropped its group so it applied to every user. Production restricts it to group "Accounting / Jin - AccountExecutive". Uncomment (and set the group) to bring it back. -->
+  <!--
+  <record id="access_1802_vendors" model="ir.model.access">
+    <field name="name">Vendors</field>
+    <field name="model_id" ref="studio_usermodel_migration.model_x_vendor_group"/>
+    <field name="group_id" ref="BugFix-Studio-Misc.group_g_accounting_jin_accountexecutive"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  -->
+</odoo>

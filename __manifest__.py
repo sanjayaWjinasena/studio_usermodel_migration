@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.62',
+    'version': '17.0.1.0.63',
     # Staging_Migration: repo-own existing Studio models before data loads.
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
@@ -44,6 +44,7 @@
         'data/defaults_f2.xml',
         'views/res_users_views.xml',
         'security/ir.model.access.csv',
+        'security/removed_handmade_access_rights.xml',
         'views/res_users_studio_ported.xml',
         'data/record_rules.xml',
         'data/server_actions_backlog.xml',
