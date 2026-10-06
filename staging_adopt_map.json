@@ -31,14 +31,6 @@
 ]
 ]
 },
-"access_1802_vendors": {
-"ir.model.access": [
-[
-1802,
-"2023-06-29 03:40:32"
-]
-]
-},
 "act_window_1443_customer_groups": {
 "ir.actions.act_window": [
 [
