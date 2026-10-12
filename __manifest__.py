@@ -51,8 +51,8 @@
         'data/window_actions_backlog.xml',
         'data/mail_templates_from_routing.xml',
         'data/server_actions_gap.xml',
-        # 'data/ir_defaults_gap.xml',  # upgrade-testing: data, not shipped
-        # 'data/ir_defaults_unblocked.xml',  # upgrade-testing: data, not shipped
+        'data/ir_defaults_gap.xml',  # upgrade-testing: form defaults shipped; record-specific ones commented inside
+        'data/ir_defaults_unblocked.xml',  # upgrade-testing: form defaults shipped; record-specific ones commented inside
         'data/security_groups.xml',
         'data/janitha_notify_automation.xml',
         'views/x_customer_group_e_views.xml',
