@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 {
+    # upgrade-testing branch: data files below are commented out - this branch installs functions only, no data is seeded.
     'name': 'Jinasena : Masterdata : User',
     'version': '17.0.1.0.62',
     'post_init_hook': 'post_init_hook',
@@ -50,8 +51,8 @@
         'data/window_actions_backlog.xml',
         'data/mail_templates_from_routing.xml',
         'data/server_actions_gap.xml',
-        'data/ir_defaults_gap.xml',
-        'data/ir_defaults_unblocked.xml',
+        # 'data/ir_defaults_gap.xml',  # upgrade-testing: data, not shipped
+        # 'data/ir_defaults_unblocked.xml',  # upgrade-testing: data, not shipped
         'data/security_groups.xml',
         'data/janitha_notify_automation.xml',
         'views/x_customer_group_e_views.xml',

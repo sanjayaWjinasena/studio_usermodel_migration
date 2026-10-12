@@ -115,8 +115,14 @@ def seed_customer_vendor_groups(env):
     )
 
 
+# upgrade-testing branch: this branch installs functions only onto an existing database.
+# Steps that write or seed business/config data are skipped while SEED_DATA is False.
+SEED_DATA = False
+
+
 def post_init_hook(env):
-    seed_customer_vendor_groups(env)
+    if SEED_DATA:
+        seed_customer_vendor_groups(env)
     _ensure_res_users_47_columns(env)
 
 
