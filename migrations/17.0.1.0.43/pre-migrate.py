@@ -9,6 +9,8 @@ _auto_init was skipped after a partial commit. Pre-migrate sidesteps both.
 Idempotent: ALTER TABLE ... ADD COLUMN IF NOT EXISTS is safe to re-run.
 """
 
+from odoo.tools import SQL
+
 
 def migrate(cr, version):
     if not version:
@@ -61,10 +63,12 @@ def migrate(cr, version):
     ]
     for name, sqltype in cols:
         try:
-            cr.execute(
-                'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS "'
-                + name + '" ' + sqltype
-            )
+            with cr.savepoint():
+                cr.execute(SQL(
+                    'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS %s %s',
+                    SQL.identifier(name),
+                    SQL(sqltype),
+                ))
         except Exception as e:
             # Log-and-continue: never block the migration on a single column
             import logging

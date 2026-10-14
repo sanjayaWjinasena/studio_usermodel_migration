@@ -7,6 +7,7 @@ Clear-DB snapshot (24 customer groups + 20 vendor groups).
 import json
 import logging
 import os
+from odoo.tools import SQL
 
 _logger = logging.getLogger(__name__)
 
@@ -178,10 +179,12 @@ def _ensure_res_users_47_columns(env):
     ]
     for name, sqltype in cols:
         try:
-            cr.execute(
-                'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS "'
-                + name + '" ' + sqltype
-            )
+            with cr.savepoint():
+                cr.execute(SQL(
+                    'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS %s %s',
+                    SQL.identifier(name),
+                    SQL(sqltype),
+                ))
         except Exception as e:
             _logger.warning(
                 "post_init: failed to add res_users.%s (%s): %s", name, sqltype, e

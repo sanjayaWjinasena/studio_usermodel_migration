@@ -8,6 +8,7 @@ Idempotent (IF NOT EXISTS).
 """
 
 import logging
+from odoo.tools import SQL
 _logger = logging.getLogger(__name__)
 
 
@@ -63,10 +64,12 @@ def migrate(cr, version):
     added = 0
     for name, sqltype in cols:
         try:
-            cr.execute(
-                'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS "'
-                + name + '" ' + sqltype
-            )
+            with cr.savepoint():
+                cr.execute(SQL(
+                    'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS %s %s',
+                    SQL.identifier(name),
+                    SQL(sqltype),
+                ))
             added += 1
         except Exception as e:
             _logger.warning("pre-migrate: failed res_users.%s (%s): %s", name, sqltype, e)

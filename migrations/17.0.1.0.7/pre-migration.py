@@ -20,6 +20,8 @@ runs. Odoo's normal _auto_init pass later fills in constraint metadata
 if needed.
 """
 
+from odoo.tools import SQL
+
 
 def migrate(cr, version):
     for col in (
@@ -28,13 +30,15 @@ def migrate(cr, version):
         'x_studio_virtual_location',
         'x_studio_virtual_location_1',
     ):
-        cr.execute(
-            f'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS {col} integer'
-        )
+        cr.execute(SQL(
+            'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS %s integer',
+            SQL.identifier(col),
+        ))
     for col in (
         'x_studio_super_user',
         'x_studio_super_user_melt_items',
     ):
-        cr.execute(
-            f'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS {col} boolean'
-        )
+        cr.execute(SQL(
+            'ALTER TABLE res_users ADD COLUMN IF NOT EXISTS %s boolean',
+            SQL.identifier(col),
+        ))
