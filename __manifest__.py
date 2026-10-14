@@ -63,7 +63,5 @@
         'data/menus_all_models.xml',
         'data/menus_from_routing.xml',
     ],
-    'installable': True,
-    'auto_install': False,
     'application': False,
 }
