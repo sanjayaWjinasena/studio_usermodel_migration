@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """v1.0.63: give back the menus that the rohana_access app locked to the Rohana group.
 
 rohana_access 17.0.2.0.0 (post_init_hook, step 4) adds this module's Rohana group
@@ -14,7 +13,7 @@ everyone). Menus with other groups are left alone. ORM only, idempotent.
 """
 import logging
 
-from odoo import api, SUPERUSER_ID
+from odoo import SUPERUSER_ID, api
 
 _logger = logging.getLogger(__name__)
 

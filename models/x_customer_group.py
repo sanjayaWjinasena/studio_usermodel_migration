@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """x_customer_group — Studio custom catalogue model ported to Python.
 
 Clear-DB defines this as a `state='manual'` model with 10 custom fields

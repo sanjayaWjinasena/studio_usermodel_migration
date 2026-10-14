@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """x_vendor_group — Studio custom catalogue model ported to Python.
 
 Sister to x_customer_group but for vendors (payable-side classification).

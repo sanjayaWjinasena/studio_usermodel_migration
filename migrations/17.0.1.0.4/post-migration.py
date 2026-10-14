@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """v0.0.4 upgrade — seed customer + vendor group catalogue rows.
 
 post_init_hook only fires on fresh install; upgrade path runs the
@@ -8,7 +7,7 @@ company_id) skips existing rows.
 import importlib.util
 import os
 
-from odoo import api, SUPERUSER_ID
+from odoo import SUPERUSER_ID, api
 from odoo.modules.module import get_module_path
 
 

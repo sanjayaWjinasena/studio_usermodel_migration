@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """v0.0.3 upgrade — declare x_customer_group + x_vendor_group models
 and 3 res.partner FKs in Python.
 

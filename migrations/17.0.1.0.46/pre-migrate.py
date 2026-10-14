@@ -6,7 +6,9 @@ someone upgrades directly from <=v0.44 to v0.46 skipping v0.45.
 """
 
 import logging
+
 from odoo.tools import SQL
+
 _logger = logging.getLogger(__name__)
 
 

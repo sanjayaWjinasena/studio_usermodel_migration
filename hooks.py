@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Post-install hooks for studio_usermodel_migration.
 
 v0.0.4: seed customer + vendor group catalogue rows from bundled
@@ -7,6 +6,7 @@ Clear-DB snapshot (24 customer groups + 20 vendor groups).
 import json
 import logging
 import os
+
 from odoo.tools import SQL
 
 _logger = logging.getLogger(__name__)

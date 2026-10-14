@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Ports x_sales_report_model from BugFix-Accounting to the shared
 Masterdata root. Companion to x_sales_report_type.
 

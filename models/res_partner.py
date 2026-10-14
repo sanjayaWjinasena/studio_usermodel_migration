@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """res.partner Studio field port — customer / vendor group cluster.
 
 Three fields on res.partner that reference the sibling catalogue

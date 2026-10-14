@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Ports x_sales_report_type from BugFix-Accounting to the shared
 Masterdata root. Owning it here breaks the cycle that prevented
 BugFix-Stock/BugFix-MRP from being depped by BugFix-Accounting.

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Inverse M2Os for x_sales_report_type One2manys targeting
 account.move.line. Moved from BugFix-Accounting/models/account_move_line.py
 so both sides of the O2M relationship live in the same module.

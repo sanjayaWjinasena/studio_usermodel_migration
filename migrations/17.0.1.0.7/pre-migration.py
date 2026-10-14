@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """v0.0.7 pre-migration -- create res.users columns before ORM reads them.
 
 The 4 x_studio_*_location + 2 x_studio_super_user_* fields were newly

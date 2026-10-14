@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """res.users Studio field port.
 
 Ports the 4 Studio-manual x_studio_* fields on res.users that
@@ -22,7 +21,6 @@ Fields:
 """
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
-
 
 # NOTE (v1.0.60): the Many2one(s) x_studio_customer_group2 / x_studio_many2one_field_3LBKs /
 #   x_studio_many2one_field_9xxxo / x_studio_many2one_field_V9cmo (-> x_customer_groups) were MOVED to BugFix-Studio-Misc v0.0.112 models/res_users.py.
@@ -167,7 +165,7 @@ class ResUsers(models.Model):
     x_studio_char_field_vHXsn = fields.Char(string='New Text')
     x_studio_char_field_zMp65 = fields.Char(string='New Text')
     x_studio_created_date = fields.Date(string='Created DAte')
-    x_studio_created_date_1 = fields.Date(string='X Studio Created Date 1')
+    x_studio_created_date_1 = fields.Date()
     x_studio_credit_limit = fields.Float(string='Credit Limit')
     x_studio_customer_group1 = fields.Many2one('x_customer_group', string='Customer Group1')
     x_studio_date_field_Gq9rN = fields.Date(string='New Date')
@@ -192,7 +190,7 @@ class ResUsers(models.Model):
     x_studio_related_field_pEksg = fields.Selection(selection=[], string='New Related Field')
     x_studio_related_field_tLbBY = fields.Many2one('account.payment.term', string='New Related Field')
     x_studio_related_field_xfyUN = fields.Char(string='New Related Field')
-    x_studio_sdfsdf = fields.Date(string='X Studio Sdfsdf')
+    x_studio_sdfsdf = fields.Date()
     x_studio_selection_field_3FlOG = fields.Selection(selection=[], string='New Selection')
     x_studio_selection_field_VAQjO = fields.Selection(selection=[], string='New Selection')
     x_studio_selection_field_lm0NR = fields.Selection(selection=[], string='New Selection')

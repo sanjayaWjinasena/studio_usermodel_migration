@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Inverse M2O for x_sales_report_type.x_studio_journal_entry_id.
 Moved from BugFix-Accounting/models/account_move.py so both sides
 of the O2M relationship live in the same module. Prevents the cycle

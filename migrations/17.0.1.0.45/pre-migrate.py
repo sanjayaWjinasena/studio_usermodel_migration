@@ -8,7 +8,9 @@ Idempotent (IF NOT EXISTS).
 """
 
 import logging
+
 from odoo.tools import SQL
+
 _logger = logging.getLogger(__name__)
 
 

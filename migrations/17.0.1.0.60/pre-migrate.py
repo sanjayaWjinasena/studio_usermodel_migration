@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """v1.0.60: hand the sticky-`_unknown` Many2one(s) below over to BugFix-Studio-Misc v0.0.112.
 
 Part of the 2026-10-02 ownership move: a Python Many2one whose comodel is owned
@@ -29,7 +28,7 @@ Idempotent: no-op on fresh installs (version is None) and when rows are gone.
 """
 import logging
 
-from odoo import api, SUPERUSER_ID
+from odoo import SUPERUSER_ID, api
 
 _logger = logging.getLogger(__name__)
 
