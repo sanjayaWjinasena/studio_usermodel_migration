@@ -20,7 +20,7 @@ Fields:
   - x_x_studio_users_internal_transfer_stock_location_count (int) —
       companion counter for the second stock.location m2m
 """
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -133,8 +133,8 @@ class ResUsers(models.Model):
         for record in self:
             if record.x_studio_super_user_melt_items and record.x_studio_super_user:
                 raise UserError(
-                    'Both the super user permissions can not be '
-                    'assigned to a single user.'
+                    _('Both the super user permissions can not be '
+                    'assigned to a single user.')
                 )
 
     @api.model_create_multi
