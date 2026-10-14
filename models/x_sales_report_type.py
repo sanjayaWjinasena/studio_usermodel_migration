@@ -10,41 +10,42 @@ Whole chain, when this module lands:
   * BugFix-Accounting's stripped v0.0.31/v0.0.32 tabs can be
     restored in a follow-up commit once Stock/MRP add the O2Ms here.
 """
+
 from odoo import fields, models
 
 
 class XSalesReportType(models.Model):
-    _name = 'x_sales_report_type'
-    _rec_name = 'x_name'  # Clear-DB Studio model: records are named by x_name
-    _description = 'X Sales Report Type'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _name = "x_sales_report_type"
+    _rec_name = "x_name"  # Clear-DB Studio model: records are named by x_name
+    _description = "X Sales Report Type"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    x_active = fields.Boolean(string='Active')
-    x_name = fields.Char(string='Report Name')
-    x_studio_report_code = fields.Selection([], string='Report Code')
-    x_studio_sequence = fields.Integer(string='Sequence')
+    x_active = fields.Boolean(string="Active")
+    x_name = fields.Char(string="Report Name")
+    x_studio_report_code = fields.Selection([], string="Report Code")
+    x_studio_sequence = fields.Integer(string="Sequence")
 
     # One2manys navigating through inverse M2Os that also live in this
     # module (see account_move.py, account_move_line.py, sale_order_line.py).
     x_studio_journal_entry_id = fields.One2many(
-        'account.move',
-        'x_studio_report_type_s_cust_aging',
-        string='Journal Entry Id',
+        "account.move",
+        "x_studio_report_type_s_cust_aging",
+        string="Journal Entry Id",
     )
     x_studio_journal_items_id = fields.One2many(
-        'account.move.line',
-        'x_studio_sales_report_type',
-        string='Journal Items Id',
+        "account.move.line",
+        "x_studio_sales_report_type",
+        string="Journal Items Id",
     )
     x_studio_sales_lines_id = fields.One2many(
-        'sale.order.line',
-        'x_studio_sales_report_type',
-        string='Sales Lines Id',
+        "sale.order.line",
+        "x_studio_sales_report_type",
+        string="Sales Lines Id",
     )
     x_studio_test = fields.One2many(
-        'account.move.line',
-        'x_studio_many2one_field_kiSUJ',
-        string='test',
+        "account.move.line",
+        "x_studio_many2one_field_kiSUJ",
+        string="test",
     )
 
     # Stock/MRP-side O2Ms (5) intentionally NOT declared here.

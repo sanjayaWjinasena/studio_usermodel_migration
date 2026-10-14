@@ -183,17 +183,19 @@ This repo adds a simple access groups list showing the full name, extended with 
   <details><summary>code (11 lines)</summary>
 
 ```python
-
 # Phase D6 workaround: res.groups lacks mail.thread so state='mail_post' fails.
 # Replaced with direct mail.mail create + send. Preserves the "notify Rohana
 # when access rights change" behavior from CDB's Studio automation.
-env['mail.mail'].create({
-    'subject': 'Access Rights have Changed',
-    'body_html': '<p>Access Rights have Changed on group <strong>%s</strong>.</p>' % record.name,
-    'email_from': 'janitha.r@jinasena.com.lk',
-    'email_to': 'rohana.b@jinasena.com.lk',
-    'auto_delete': True,
-}).send()
+env["mail.mail"].create(
+    {
+        "subject": "Access Rights have Changed",
+        "body_html": "<p>Access Rights have Changed on group <strong>%s</strong>.</p>"
+        % record.name,
+        "email_from": "janitha.r@jinasena.com.lk",
+        "email_to": "rohana.b@jinasena.com.lk",
+        "auto_delete": True,
+    }
+).send()
 ```
   </details>
 **Automations (1):**
@@ -411,11 +413,10 @@ A Customer Group classifies customer contacts and is identified by a required co
   <details><summary>code (5 lines)</summary>
 
 ```python
+company_id = env.context.get("allowed_company_ids", [env.user.company_id.id])[0]
+company = env["res.company"].browse(company_id)
 
-company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
-company = env['res.company'].browse(company_id)
-
-record['x_studio_company_id'] = company.id
+record["x_studio_company_id"] = company.id
 ```
   </details>
 - **JIN - Company Id in Customer Group** (`sa_f5_x_customer_group_jin_company_id_in_customer_group`, type `code`)
@@ -425,10 +426,10 @@ record['x_studio_company_id'] = company.id
   <details><summary>code (4 lines)</summary>
 
 ```python
-company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
-company = env['res.company'].browse(company_id)
+company_id = env.context.get("allowed_company_ids", [env.user.company_id.id])[0]
+company = env["res.company"].browse(company_id)
 
-record['x_studio_company_id'] = company.id
+record["x_studio_company_id"] = company.id
 ```
   </details>
 **Automations (1):**
@@ -563,11 +564,10 @@ A Vendor Group classifies vendor contacts and is identified by a required code, 
   <details><summary>code (5 lines)</summary>
 
 ```python
+company_id = env.context.get("allowed_company_ids", [env.user.company_id.id])[0]
+company = env["res.company"].browse(company_id)
 
-company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
-company = env['res.company'].browse(company_id)
-
-record['x_studio_company_id'] = company.id
+record["x_studio_company_id"] = company.id
 ```
   </details>
 - **JIN - Company Id in Vendor Group** (`sa_f5_x_vendor_group_jin_company_id_in_vendor_group`, type `code`)
@@ -577,10 +577,10 @@ record['x_studio_company_id'] = company.id
   <details><summary>code (4 lines)</summary>
 
 ```python
-company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
-company = env['res.company'].browse(company_id)
+company_id = env.context.get("allowed_company_ids", [env.user.company_id.id])[0]
+company = env["res.company"].browse(company_id)
 
-record['x_studio_company_id'] = company.id
+record["x_studio_company_id"] = company.id
 ```
   </details>
 **Automations (1):**

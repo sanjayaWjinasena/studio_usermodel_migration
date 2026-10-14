@@ -1,21 +1,21 @@
 {
     # upgrade-testing branch: data files below are commented out - this branch installs functions only, no data is seeded.
-    'name': 'Jinasena : Masterdata : User',
-    'version': '17.0.1.0.63',
-    'post_init_hook': 'post_init_hook',
-    'summary': (
-        'Ports res.users Studio customisations + customer/vendor group '
-        'catalogues (x_customer_group, x_vendor_group) into proper '
-        'Python modules. Companion to Fix-repair, which owns the '
-        'repair-flow user fields (location m2o, super-user booleans). '
-        'This module owns res.users Studio fields that don\'t fit the '
-        'repair-workflow domain plus the customer/vendor classification '
-        'master data (which drives per-partner payment terms + '
-        'receivable/payable accounts).'
+    "name": "Jinasena : Masterdata : User",
+    "version": "17.0.1.0.63",
+    "post_init_hook": "post_init_hook",
+    "summary": (
+        "Ports res.users Studio customisations + customer/vendor group "
+        "catalogues (x_customer_group, x_vendor_group) into proper "
+        "Python modules. Companion to Fix-repair, which owns the "
+        "repair-flow user fields (location m2o, super-user booleans). "
+        "This module owns res.users Studio fields that don't fit the "
+        "repair-workflow domain plus the customer/vendor classification "
+        "master data (which drives per-partner payment terms + "
+        "receivable/payable accounts)."
     ),
-    'author': 'Jinasena Agricultural Machinery (Pvt) Ltd.',
-    'category': 'Extra Tools',
-    'license': 'LGPL-3',
+    "author": "Jinasena Agricultural Machinery (Pvt) Ltd.",
+    "category": "Extra Tools",
+    "license": "LGPL-3",
     # v0.0.6: dropped Fix-repair from depends. Adding
     # studio_usermodel_migration as a dep on BugFix-Sales (v0.47)
     # closed a 3-way cycle:
@@ -33,34 +33,34 @@
     # during related-field setup) and blocked all further upgrades
     # on the env. Reverted here so the env can move again while we
     # diagnose offline.
-    'depends': ['base', 'hr_recruitment', 'account', 'bank-data'],
-    'data': [
-        'data/system_studio_fields.xml',
-        'data/defaults_final.xml',
-        'data/rules_f7.xml',
-        'data/server_actions_f5.xml',
-        'data/defaults_f2.xml',
-        'views/res_users_views.xml',
-        'security/ir.model.access.csv',
-        'security/removed_handmade_access_rights.xml',
-        'views/res_users_studio_ported.xml',
-        'data/record_rules.xml',
-        'data/server_actions_backlog.xml',
-        'data/automations_backlog.xml',
-        'data/window_actions_backlog.xml',
-        'data/mail_templates_from_routing.xml',
-        'data/server_actions_gap.xml',
-        'data/ir_defaults_gap.xml',  # upgrade-testing: form defaults shipped; record-specific ones commented inside
-        'data/ir_defaults_unblocked.xml',  # upgrade-testing: form defaults shipped; record-specific ones commented inside
-        'data/security_groups.xml',
-        'data/janitha_notify_automation.xml',
-        'views/x_customer_group_e_views.xml',
-        'views/x_vendor_group_e_views.xml',
-        'views/views_final.xml',
-        'views/res_groups_studio_tree.xml',
-        'data/menus_f6.xml',
-        'data/menus_all_models.xml',
-        'data/menus_from_routing.xml',
+    "depends": ["base", "hr_recruitment", "account", "bank-data"],
+    "data": [
+        "data/system_studio_fields.xml",
+        "data/defaults_final.xml",
+        "data/rules_f7.xml",
+        "data/server_actions_f5.xml",
+        "data/defaults_f2.xml",
+        "views/res_users_views.xml",
+        "security/ir.model.access.csv",
+        "security/removed_handmade_access_rights.xml",
+        "views/res_users_studio_ported.xml",
+        "data/record_rules.xml",
+        "data/server_actions_backlog.xml",
+        "data/automations_backlog.xml",
+        "data/window_actions_backlog.xml",
+        "data/mail_templates_from_routing.xml",
+        "data/server_actions_gap.xml",
+        "data/ir_defaults_gap.xml",  # upgrade-testing: form defaults shipped; record-specific ones commented inside
+        "data/ir_defaults_unblocked.xml",  # upgrade-testing: form defaults shipped; record-specific ones commented inside
+        "data/security_groups.xml",
+        "data/janitha_notify_automation.xml",
+        "views/x_customer_group_e_views.xml",
+        "views/x_vendor_group_e_views.xml",
+        "views/views_final.xml",
+        "views/res_groups_studio_tree.xml",
+        "data/menus_f6.xml",
+        "data/menus_all_models.xml",
+        "data/menus_from_routing.xml",
     ],
-    'application': False,
+    "application": False,
 }
