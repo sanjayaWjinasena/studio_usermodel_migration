@@ -22,7 +22,7 @@ class XSalesReportType(models.Model):
 
     x_active = fields.Boolean(string='Active')
     x_name = fields.Char(string='Report Name')
-    x_studio_report_code = fields.Selection([], string='Report Code')
+    x_studio_report_code = fields.Selection([('Daily Sales Summary', 'Daily Sales Summary'), ('Sales Details for Incentive Calc.', 'Sales Details for Incentive Calc.'), ('Production Overview - WIP', 'Production Overview - WIP'), ('Customer Aging Report', 'Customer Aging Report'), ('Slow Moving Items', 'Slow Moving Items'), ('Sales - Production - Purchase Report', 'Sales - Production - Purchase Report'), ('Production Summary - Split', 'Production Summary - Split'), ('Production Job Variance', 'Production Job Variance'), ('Casting Melt', 'Casting Melt'), ('Import Transaction', 'Import Transaction'), ('Project Gross Margin', 'Project Gross Margin'), ('Costing Work Sheet', 'Costing Work Sheet')], string='Report Code')
     x_studio_sequence = fields.Integer(string='Sequence')
 
     # One2manys navigating through inverse M2Os that also live in this
