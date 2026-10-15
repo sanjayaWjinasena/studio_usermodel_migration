@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- upgrade-testing: local copy of Clear-DB action 1448 "Vendors" (BugFix-Sales.act_window_1448_vendors loads after this module).
+         The button used the numeric id 1448, which is a different action on new-install and missing on upgrade-testing. -->
+    <record id="act_window_1448_vendors" model="ir.actions.act_window">
+      <field name="name">Vendors</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('x_studio_vendor_group', '=', active_id)]</field>
+      <field name="context">{'search_default_x_studio_vendor_group': active_id,'default_x_studio_vendor_group': active_id}</field>
+    </record>
+</odoo>

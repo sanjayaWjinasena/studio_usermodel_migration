@@ -1,14 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Studio's tree view for res.groups (Access Groups list).
-     CDB shipped this pair (view 4947 primary + view 4948 extension)
-     because Odoo core doesn't ship a tree view for res.groups on this
-     env; without them the Access Groups list falls back to Odoo's
-     auto-generated tree with just display_name.
-     4947 declares the primary <tree>; 4948 inherits it and appends
-     id/create_uid/comment/create_date columns via xpath. -->
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-
     <record id="view_res_groups_tree_studio" model="ir.ui.view">
       <field name="name">res.groups.tree.studio</field>
       <field name="model">res.groups</field>
@@ -20,7 +11,6 @@
         </tree>
       </field>
     </record>
-
     <record id="view_res_groups_tree_studio_ext" model="ir.ui.view">
       <field name="name">res.groups.tree.studio.ext</field>
       <field name="model">res.groups</field>
@@ -40,6 +30,4 @@
         </data>
       </field>
     </record>
-
-  </data>
 </odoo>

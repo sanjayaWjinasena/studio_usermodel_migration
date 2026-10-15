@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- studio_usermodel_migration: Phase F6 - 2 menus -->
 <odoo>
   <menuitem id="menu_f6_vendor_groups" name="Vendor Groups" parent="purchase.menu_purchase_config" action="studio_usermodel_migration.act_window_1444_vendor_groups" sequence="2"/>
   <menuitem id="menu_f6_customer_groups" name="Customer Groups" parent="sale.menu_sale_config" action="studio_usermodel_migration.act_window_1443_customer_groups" sequence="4"/>
@@ -12,4 +11,9 @@
   <record id="menu_f6_vendor_groups" model="ir.ui.menu">
     <field name="active" eval="False"/>
   </record>
+  <menuitem id="menu_1681_all_models" name="All Models" sequence="10"/>
+  <menuitem id="menu_1682_user_group_access_rights" name="User Group - Access Rights" parent="menu_1681_all_models" sequence="10"/>
+  <menuitem id="menu_795_vendor_groups" name="Vendor Groups" parent="purchase.menu_purchase_config" action="studio_usermodel_migration.act_window_1444_vendor_groups" sequence="2"/>
+  <menuitem id="menu_794_customer_groups" name="Customer Groups" parent="sale.menu_sale_config" action="studio_usermodel_migration.act_window_1443_customer_groups" sequence="4"/>
+  <menuitem id="menu_1861_employee_bank_accounts" name="Employee Bank Accounts" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration" action="bank-data.action_employee_bank_accounts" sequence="30"/>
 </odoo>

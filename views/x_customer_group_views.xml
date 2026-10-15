@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- studio_usermodel_migration: Phase E - 5 views for x_customer_group -->
 <odoo>
-  <data>
+  <record id="act_window_1443_customer_groups" model="ir.actions.act_window">
+    <field name="name">Customer Groups</field>
+    <field name="res_model">x_customer_group</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{}</field>
+    <field name="help" type="html"><p class="o_view_nocontent_smiling_face">
+                    This is your new action.
+                </p>
+                <p>By default, it contains a list and a form view and possibly
+                    other view types depending on the options you chose for your model.
+                </p>
+                <p>
+                    You can start customizing these screens by clicking on the Studio icon on the
+                    top right corner (you can also customize this help message there).
+                </p>
+            </field>
+  </record>
     <record id="view_3114_default_form_view_for_x_customer_group_e" model="ir.ui.view">
       <field name="name">Default form view for x_customer_group</field>
       <field name="model">x_customer_group</field>
@@ -31,7 +46,6 @@
 </form>
       </field>
     </record>
-
     <record id="view_3113_default_list_view_for_x_customer_group_e" model="ir.ui.view">
       <field name="name">Default list view for x_customer_group</field>
       <field name="model">x_customer_group</field>
@@ -43,7 +57,6 @@
 </tree>
       </field>
     </record>
-
     <record id="view_3115_default_search_view_for_x_customer_group_e" model="ir.ui.view">
       <field name="name">Default search view for x_customer_group</field>
       <field name="model">x_customer_group</field>
@@ -57,6 +70,24 @@
 </search>
       </field>
     </record>
-
-  </data>
+    <record id="view_final_x_customer_group_odoo_studio_default_list_view_for_x_customer_group_customiza" model="ir.ui.view">
+      <field name="name">Odoo Studio: Default list view for x_customer_group customization</field>
+      <field name="model">x_customer_group</field>
+      <field name="type">tree</field>
+      <field name="priority">99</field>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_3113_default_list_view_for_x_customer_group_e"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <data>
+  <xpath expr="//field[@name='x_studio_sequence']" position="attributes">
+    <attribute name="column_invisible">1</attribute></xpath>
+  <xpath expr="//field[@name='x_name']" position="after">
+    <field name="x_studio_description"/>
+    <field name="x_studio_payment_term"/>
+    <field name="x_studio_group_type"/>
+    <field name="x_studio_receivable_account"/>
+  </xpath>
+</data>
+      </field>
+    </record>
 </odoo>

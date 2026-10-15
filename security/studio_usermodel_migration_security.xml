@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- studio_usermodel_migration backlog: 2 record rules -->
 <odoo>
-
+  <record id="rule_f7_x_vendor_group_name_jin_multi_company_vendor_group" model="ir.rule">
+    <field name="name">Name	JIN - Multi-Company - Vendor Group</field>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="domain_force">['|', ('x_studio_company_id', 'in', company_ids), ('x_studio_company_id', '=', False)]</field>
+  </record>
+  <record id="rule_f7_x_customer_group_jin_multi_company_customer_group" model="ir.rule">
+    <field name="name">JIN - Multi-Company - Customer Group</field>
+    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="domain_force">['|', ('x_studio_company_id', 'in', company_ids), ('x_studio_company_id', '=', False)]</field>
+  </record>
   <record id="rule_564_jin_multi_company_customer_group" model="ir.rule">
     <field name="name">JIN - Multi-Company - Customer Group</field>
     <field name="model_id" ref="studio_usermodel_migration.model_x_customer_group"/>
@@ -12,7 +20,6 @@
     <field name="perm_unlink" eval="True"/>
     <field name="active" eval="True"/>
   </record>
-
   <record id="rule_518_name_jin_multi_company_vendor_group" model="ir.rule">
     <field name="name">Name	JIN - Multi-Company - Vendor Group</field>
     <field name="model_id" ref="studio_usermodel_migration.model_x_vendor_group"/>
@@ -23,5 +30,8 @@
     <field name="perm_unlink" eval="True"/>
     <field name="active" eval="True"/>
   </record>
-
+    <record id="group_studio_518_rohana" model="res.groups">
+      <field name="name">Rohana</field>
+      <field name="category_id" ref="base.module_category_extra"/>
+    </record>
 </odoo>

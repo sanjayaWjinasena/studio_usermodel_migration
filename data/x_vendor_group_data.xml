@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="sa_f5_x_vendor_group_jin_company_id_in_vendor_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="state">code</field>
+    <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id]]></field>
+    <field name="usage">base_automation</field>
+    <field name="binding_view_types">list,form</field>
+  </record>
+  <record id="server_action_2614_jin_company_id_in_vendor_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="state">code</field>
+    <field name="usage">base_automation</field>
+    <field name="code">company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id</field>
+  </record>
+  <!-- STRIPPED server_action_2266_janitha_ranasinghe: state=mail_post on res.groups lacks required mixin -->
+<!-- STRIPPED server_action_2465_user_group_change_notify: state=mail_post on res.groups lacks required mixin -->
+<!-- STRIPPED server_action_2466_user_group_updation: state=mail_post on res.groups lacks required mixin -->
+  <record id="base_automation_286_jin_company_id_in_vendor_group" model="base.automation">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="active" eval="True"/>
+    <field name="model_id" search="[('model', '=', 'x_vendor_group')]"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="trigger_field_ids" eval="[(6, 0, [ref('studio_usermodel_migration.field_x_vendor_group__create_date')])]"/>
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2614_jin_company_id_in_vendor_group')])]"/>
+  </record>
+  <record id="server_action_2614_jin_company_id_in_vendor_group" model="ir.actions.server">
+    <field name="name">JIN - Company Id in Vendor Group</field>
+    <field name="model_id" ref="studio_usermodel_migration.model_x_vendor_group"/>
+    <field name="state">code</field>
+    <field name="usage">base_automation</field>
+    <field name="code"><![CDATA[
+company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
+company = env['res.company'].browse(company_id)
+
+record['x_studio_company_id'] = company.id
+    ]]></field>
+  </record>
+    <data noupdate="1">
+    <record id="default_215_x_vendor_group_x_active" model="ir.default">
+      <field name="field_id" ref="studio_usermodel_migration.field_x_vendor_group__x_active"/>
+      <field name="json_value">true</field>
+    </record>
+    <record id="default_216_x_vendor_group_x_studio_sequence" model="ir.default">
+      <field name="field_id" ref="studio_usermodel_migration.field_x_vendor_group__x_studio_sequence"/>
+      <field name="json_value">10</field>
+    </record>
+    <!-- DROPPED default_230_x_customer_group_x_studio_group_type: selection default (defer to user via UI) -->
+    </data>
+</odoo>

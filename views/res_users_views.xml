@@ -1,29 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-    res.users form inherit that mirrors Clear-DB's Studio arch
-    (Fix-repair.view_res_users_form_2392, "Odoo Studio: res.users.form
-    customization"), minus the two Studio-DB-specific stat buttons
-    (actions 2487/2488) which don't exist on stand-alone.
-
-    Field placements after <field name="tz">:
-      Virtual Location    (x_studio_virtual_location, company_id==1)
-      Virtual Location    (x_studio_virtual_location_1, company_id==2)
-      Source Location     (x_studio_source_location, company_id==1)
-      Source Location     (x_studio_source_location_1, company_id==2)
-      Current Company     (x_studio_company_id, invisible=1)
-
-    New notebook pages:
-      Recruitment      -> x_studio_recr_stages (m2m tags)
-      Manufacturing    -> x_studio_super_user_melt_items
-                          + x_studio_super_user (invisible)
-
-    Fields declared:
-      - Fix-repair models/res_users.py: 4 location m2o + 2 super-user bools
-      - This module models/res_users.py: x_studio_company_id,
-          x_studio_recr_stages, 2 companion counter ints
--->
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="res_users_form_studio_ported" model="ir.ui.view">
         <field name="name">res.users.form.studio.ported</field>
         <field name="model">res.users</field>
@@ -32,34 +8,18 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='tz']" position="after">
-                <field name="x_studio_virtual_location"
-                       string="Virtual Location"
-                       options="{'no_create': True}"
-                       invisible="x_studio_company_id and x_studio_company_id != 1"/>
-                <field name="x_studio_virtual_location_1"
-                       string="Virtual Location"
-                       options="{'create_name_field': 'complete_name'}"
-                       invisible="x_studio_company_id != 2"/>
-                <field name="x_studio_source_location"
-                       string="Source Location"
-                       options="{'no_create': True}"
-                       invisible="x_studio_company_id and x_studio_company_id != 1"/>
-                <field name="x_studio_source_location_1"
-                       string="Source Location"
-                       options="{'create_name_field': 'complete_name'}"
-                       invisible="x_studio_company_id != 2"/>
-                <field name="x_studio_company_id"
-                       string="Current Company"
-                       invisible="1"/>
+                <field name="x_studio_virtual_location" string="Virtual Location" options="{'no_create': True}" invisible="x_studio_company_id and x_studio_company_id != 1"/>
+                <field name="x_studio_virtual_location_1" string="Virtual Location" options="{'create_name_field': 'complete_name'}" invisible="x_studio_company_id != 2"/>
+                <field name="x_studio_source_location" string="Source Location" options="{'no_create': True}" invisible="x_studio_company_id and x_studio_company_id != 1"/>
+                <field name="x_studio_source_location_1" string="Source Location" options="{'create_name_field': 'complete_name'}" invisible="x_studio_company_id != 2"/>
+                <field name="x_studio_company_id" string="Current Company" invisible="1"/>
             </xpath>
 
             <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
                 <page string="Recruitment" name="studio_usermodel_recruitment">
                     <group>
                         <group>
-                            <field name="x_studio_recr_stages"
-                                   widget="many2many_tags"
-                                   string="Recruitment Stages"/>
+                            <field name="x_studio_recr_stages" widget="many2many_tags" string="Recruitment Stages"/>
                         </group>
                         <group/>
                     </group>
@@ -67,11 +27,8 @@
                 <page string="Manufacturing" name="studio_usermodel_manufacturing">
                     <group>
                         <group>
-                            <field name="x_studio_super_user_melt_items"
-                                   string="Super User (Melt Items)"/>
-                            <field name="x_studio_super_user"
-                                   string="Super User (All Items)"
-                                   invisible="1"/>
+                            <field name="x_studio_super_user_melt_items" string="Super User (Melt Items)"/>
+                            <field name="x_studio_super_user" string="Super User (All Items)" invisible="1"/>
                         </group>
                         <group/>
                     </group>
@@ -80,5 +37,59 @@
 
         </field>
     </record>
-
+  <record id="ported_view_res_users_form_2392" model="ir.ui.view">
+    <field name="name">Odoo Studio: res.users.form customization</field>
+    <field name="model">res.users</field>
+    <field name="type">form</field>
+    <field name="priority">99</field>
+    <field name="mode">extension</field>
+    <field name="inherit_id" ref="base.view_users_form"/>
+    <field name="arch" type="xml">
+      <data>
+        <xpath expr="//button[@name='action_open_employees']" position="after">
+          
+          
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/div[not(@name)][2]/group[1]/field[@name='partner_id']" position="attributes">
+          <attribute name="invisible">(not id) or (id == False)</attribute><attribute name="readonly"/></xpath>
+        <!---->
+        <xpath expr="//field[@name='active']" position="attributes">
+          <attribute name="invisible"/></xpath>
+        <xpath expr="//field[@name='tz']" position="after">
+          <field name="x_studio_virtual_location" string="Virtual Location" options="{&quot;no_create&quot;:true}" invisible="x_studio_company_id != 1"/>
+          <field name="x_studio_virtual_location_1" options="{'create_name_field': 'complete_name'}" string="Virtual Location" invisible="x_studio_company_id != 2"/>
+          <field name="x_studio_source_location" string="Source Location" options="{&quot;no_create&quot;:true}" invisible="x_studio_company_id != 1"/>
+          <field name="x_studio_source_location_1" options="{'create_name_field': 'complete_name'}" string="Source Location" invisible="x_studio_company_id != 2"/>
+          <field name="x_studio_company_id" string="Current Company" invisible="1"/>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+          <page string="Recruitment" name="studio_page_AZpEI">
+            <group name="studio_group_AZpEI">
+              <group name="studio_group_AZpEI_left">
+                <field name="x_studio_recr_stages" string="Recruitment Stages" widget="many2many_tags" options="{&quot;color_field&quot;: &quot;x_color&quot;}"/>
+              </group>
+              <group name="studio_group_AZpEI_right"/>
+            </group>
+          </page>
+          <page string="Manufacturing" name="studio_page_diV0C">
+            <group name="studio_group_diV0C">
+              <group name="studio_group_diV0C_left">
+                <field name="x_studio_super_user_melt_items" string="Super User (Melt Items)"/>
+                <field name="x_studio_super_user" string="Super User (All Items)" invisible="1"/>
+              </group>
+              <group name="studio_group_diV0C_right"/>
+            </group>
+          </page>
+          <page string="Attendance Mgt." name="studio_page_AgKEb">
+            <group name="studio_group_AgKEb">
+              <group name="studio_group_AgKEb_left">
+                <field name="x_studio_attendance_administrator" string="Attendance Administrator"/>
+              </group>
+              <group name="studio_group_AgKEb_right"/>
+            </group>
+          </page>
+        </xpath>
+      </data>
+    </field>
+  </record>
 </odoo>
