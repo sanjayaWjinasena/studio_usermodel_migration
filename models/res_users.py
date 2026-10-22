@@ -23,8 +23,10 @@ Fields:
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
-# NOTE (v1.0.60): the Many2one(s) x_studio_customer_group2 / x_studio_many2one_field_3LBKs /
-#   x_studio_many2one_field_9xxxo / x_studio_many2one_field_V9cmo (-> x_customer_groups) were MOVED to BugFix-Studio-Misc v0.0.112 models/res_users.py.
+# NOTE (v1.0.60): the Many2one(s) x_studio_customer_group2 /
+# x_studio_many2one_field_3LBKs /
+# x_studio_many2one_field_9xxxo / x_studio_many2one_field_V9cmo (-> x_customer_groups)
+# were MOVED to BugFix-Studio-Misc v0.0.112 models/res_users.py.
 # Their comodel is owned by a DOWNSTREAM module; declared here they were
 # `_unknown` for the whole upgrade-mode registry build (see BugFix-Purchase
 # models/upstream_link_fields.py). Do NOT re-add them here.

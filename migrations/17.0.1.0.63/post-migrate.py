@@ -92,7 +92,8 @@ def migrate(cr, version):
     if locked:
         locked.write({"groups_id": [(3, rohana.id)]})
     _logger.info(
-        "studio_usermodel_migration v1.0.63: removed Rohana-only restriction from %s menu(s): %s",
+        "studio_usermodel_migration v1.0.63: removed Rohana-only restriction "
+        "from %s menu(s): %s",
         len(locked),
         ", ".join(locked.mapped("complete_name")),
     )
