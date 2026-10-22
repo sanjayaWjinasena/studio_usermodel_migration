@@ -87,6 +87,7 @@ def seed_customer_vendor_groups(env):
                 row["name"],
                 row.get("company_name"),
                 e,
+                exc_info=True,
             )
 
     created_vend, skipped_vend = 0, 0
@@ -121,6 +122,7 @@ def seed_customer_vendor_groups(env):
                 row["name"],
                 row.get("company_name"),
                 e,
+                exc_info=True,
             )
 
     _logger.info(
@@ -206,5 +208,9 @@ def _ensure_res_users_47_columns(env):
                 )
         except Exception as e:
             _logger.warning(
-                "post_init: failed to add res_users.%s (%s): %s", name, sqltype, e
+                "post_init: failed to add res_users.%s (%s): %s",
+                name,
+                sqltype,
+                e,
+                exc_info=True,
             )

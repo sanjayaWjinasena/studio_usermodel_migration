@@ -73,5 +73,9 @@ def migrate(cr, version):
                 )
         except Exception as e:
             _logger.warning(
-                "pre-migrate v0.46 belt-and-braces: %s (%s): %s", name, sqltype, e
+                "pre-migrate v0.46 belt-and-braces: %s (%s): %s",
+                name,
+                sqltype,
+                e,
+                exc_info=True,
             )

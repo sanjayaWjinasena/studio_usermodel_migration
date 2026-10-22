@@ -77,7 +77,11 @@ def migrate(cr, version):
             added += 1
         except Exception as e:
             _logger.warning(
-                "pre-migrate: failed res_users.%s (%s): %s", name, sqltype, e
+                "pre-migrate: failed res_users.%s (%s): %s",
+                name,
+                sqltype,
+                e,
+                exc_info=True,
             )
     _logger.info(
         "pre-migrate v0.45: processed %d res.users columns (IF NOT EXISTS)", added
