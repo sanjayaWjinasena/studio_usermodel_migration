@@ -51,5 +51,4 @@
         "views/res_groups_views.xml",
         "views/studio_usermodel_migration_menus.xml",
     ],
-    "application": False,
 }
