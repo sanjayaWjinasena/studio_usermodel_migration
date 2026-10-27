@@ -76,5 +76,9 @@ def migrate(cr, version):
             import logging
 
             logging.getLogger(__name__).warning(
-                "pre-migrate: failed to add res_users.%s (%s): %s", name, sqltype, e
+                "pre-migrate: failed to add res_users.%s (%s): %s",
+                name,
+                sqltype,
+                e,
+                exc_info=True,
             )
