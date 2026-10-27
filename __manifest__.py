@@ -1,5 +1,6 @@
 {
-    # upgrade-testing branch: data files below are commented out - this branch installs functions only, no data is seeded.
+    # upgrade-testing branch: data files below are commented out - this branch installs
+    # functions only, no data is seeded.
     "name": "Jinasena : Masterdata : User",
     "version": "17.0.1.0.63",
     "post_init_hook": "post_init_hook",

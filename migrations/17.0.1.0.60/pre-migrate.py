@@ -14,7 +14,8 @@ This pre-migrate does two ORM-only things (no cr.execute):
    Otherwise ir.model.data._process_end would see xmlids that were not
    re-loaded and, if no other xmlid pointed at the same ir.model.fields row,
    UNLINK the field and DROP its column (live data). With the pointer gone
-   the field row is never a cleanup candidate; BugFix-Studio-Misc v0.0.112 re-attaches its own
+   the field row is never a cleanup candidate; BugFix-Studio-Misc v0.0.112 re-attaches
+   its own
    xmlids on reflection.
 
 2. Unlinks the extension views of this module whose arch referenced the moved
