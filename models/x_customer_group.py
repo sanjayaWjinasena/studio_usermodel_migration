@@ -26,14 +26,14 @@ class XCustomerGroup(models.Model):
     _name = "x_customer_group"
     _description = "Customer Group"
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _rec_name = "x_name"
-    _order = "x_studio_sequence asc, id asc"
+    _rec_name = "name"
+    _order = "sequence asc, id asc"
 
-    x_active = fields.Boolean(string="Active", default=True)
-    x_name = fields.Char(string="Name", required=True)
-    x_studio_sequence = fields.Integer(string="Sequence", default=10)
-    x_studio_description = fields.Char(string="Description")
-    x_studio_company_id = fields.Many2one(
+    active = fields.Boolean(string="Active", default=True)
+    name = fields.Char(string="Name", required=True)
+    sequence = fields.Integer(string="Sequence", default=10)
+    description = fields.Char(string="Description")
+    accounting_company_id = fields.Many2one(
         "res.company",
         string="Company",
     )
@@ -89,5 +89,5 @@ class XCustomerGroup(models.Model):
 class XCustomerGroupGap(models.Model):
     _inherit = "x_customer_group"
 
-    x_active = fields.Boolean(string="Active")
-    x_name = fields.Char(string="Code")
+    active = fields.Boolean(string="Active")
+    name = fields.Char(string="Code")

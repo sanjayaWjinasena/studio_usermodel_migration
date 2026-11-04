@@ -7,7 +7,7 @@
     <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
 company = env['res.company'].browse(company_id)
 
-record['x_studio_company_id'] = company.id]]></field>
+record['accounting_company_id'] = company.id]]></field>
     <field name="usage">base_automation</field>
     <field name="binding_view_types">list,form</field>
   </record>
@@ -19,7 +19,7 @@ record['x_studio_company_id'] = company.id]]></field>
     <field name="code">company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
 company = env['res.company'].browse(company_id)
 
-record['x_studio_company_id'] = company.id</field>
+record['accounting_company_id'] = company.id</field>
   </record>
   <!-- STRIPPED base_automation_208_janitha_ranasinghe: refs missing action(s) ['studio_usermodel_migration.server_action_2266_janitha_ranasinghe'] -->
 <record id="base_automation_312_jin_company_id_in_customer_group" model="base.automation">
@@ -39,16 +39,16 @@ record['x_studio_company_id'] = company.id</field>
 company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
 company = env['res.company'].browse(company_id)
 
-record['x_studio_company_id'] = company.id
+record['accounting_company_id'] = company.id
     ]]></field>
   </record>
     <data noupdate="1">
-    <record id="default_213_x_customer_group_x_active" model="ir.default">
-      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__x_active"/>
+    <record id="default_213_x_customer_group_active" model="ir.default">
+      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__active"/>
       <field name="json_value">true</field>
     </record>
-    <record id="default_214_x_customer_group_x_studio_sequence" model="ir.default">
-      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__x_studio_sequence"/>
+    <record id="default_214_x_customer_group_sequence" model="ir.default">
+      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__sequence"/>
       <field name="json_value">10</field>
     </record>
     <record id="default_230_x_customer_group_x_studio_group_type" model="ir.default">

@@ -6,10 +6,10 @@ on Clear-DB, owned by Fix-repair) reference. Declared here rather
 than in Fix-repair because they're user-master metadata (company,
 recruitment stages, stock-location counters) — distinct from the
 repair-flow location fields that legitimately live in Fix-repair
-(x_studio_source_location, x_studio_virtual_location, etc.).
+(source_location, virtual_location, etc.).
 
 Fields:
-  - x_studio_company_id           (m2o res.company) — per-user
+  - accounting_company_id           (m2o res.company) — per-user
       "Current Company" flag used by view-arch invisible expressions
       to swap between _1 fields across companies
   - x_studio_recr_stages          (m2m hr.recruitment.stage) —
@@ -35,7 +35,7 @@ from odoo.exceptions import UserError
 class ResUsers(models.Model):
     _inherit = "res.users"
 
-    x_studio_company_id = fields.Many2one(
+    accounting_company_id = fields.Many2one(
         "res.company",
         string="Current Company",
     )
@@ -82,25 +82,25 @@ class ResUsers(models.Model):
 
     # v0.0.7: repair-flow location fields moved here from Fix-repair.
     # The res.users form view in this module's views/res_users_views.xml
-    # references x_studio_virtual_location, which broke registry setup
+    # references virtual_location, which broke registry setup
     # when studio_usermodel_migration loaded before Fix-repair.
     # These four fields are pure res.users Studio schema -- they
     # belong in this res.users-scoped module. Fix-repair's
     # helpdesk.ticket related fields still resolve because
     # studio_usermodel_migration now loads first in the graph.
-    x_studio_source_location = fields.Many2one(
+    source_location = fields.Many2one(
         "stock.location",
         string="Source Location",
     )
-    x_studio_source_location_1 = fields.Many2one(
+    source_location_1 = fields.Many2one(
         "stock.location",
         string="Source Location",
     )
-    x_studio_virtual_location = fields.Many2one(
+    virtual_location = fields.Many2one(
         "stock.location",
         string="Virtual Location",
     )
-    x_studio_virtual_location_1 = fields.Many2one(
+    virtual_location_1 = fields.Many2one(
         "stock.location",
         string="Virtual Location",
     )
@@ -173,7 +173,7 @@ class ResUsers(models.Model):
     x_studio_char_field_169HD = fields.Char(string="New Text")
     x_studio_char_field_vHXsn = fields.Char(string="New Text")
     x_studio_char_field_zMp65 = fields.Char(string="New Text")
-    x_studio_created_date = fields.Date(string="Created DAte")
+    created_date = fields.Date(string="Created DAte")
     x_studio_created_date_1 = fields.Date()
     x_studio_credit_limit = fields.Float(string="Credit Limit")
     x_studio_customer_group1 = fields.Many2one(

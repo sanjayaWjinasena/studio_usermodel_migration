@@ -60,8 +60,8 @@ def seed_customer_vendor_groups(env):
             skipped_cust += 1
             continue
         domain = [
-            ("x_name", "=", row["name"]),
-            ("x_studio_company_id", "=", company.id),
+            ("name", "=", row["name"]),
+            ("accounting_company_id", "=", company.id),
         ]
         existing = CustGrp.search(domain, limit=1)
         if existing:
@@ -71,12 +71,12 @@ def seed_customer_vendor_groups(env):
             with env.cr.savepoint():
                 CustGrp.create(
                     {
-                        "x_name": row["name"],
-                        "x_studio_sequence": row.get("sequence") or 10,
-                        "x_active": row.get("active", True),
-                        "x_studio_description": row.get("description") or "",
+                        "name": row["name"],
+                        "sequence": row.get("sequence") or 10,
+                        "active": row.get("active", True),
+                        "description": row.get("description") or "",
                         "x_studio_group_type": row.get("group_type") or "General",
-                        "x_studio_company_id": company.id,
+                        "accounting_company_id": company.id,
                     }
                 )
                 created_cust += 1
@@ -97,8 +97,8 @@ def seed_customer_vendor_groups(env):
             skipped_vend += 1
             continue
         domain = [
-            ("x_name", "=", row["name"]),
-            ("x_studio_company_id", "=", company.id),
+            ("name", "=", row["name"]),
+            ("accounting_company_id", "=", company.id),
         ]
         existing = VendGrp.search(domain, limit=1)
         if existing:
@@ -108,11 +108,11 @@ def seed_customer_vendor_groups(env):
             with env.cr.savepoint():
                 VendGrp.create(
                     {
-                        "x_name": row["name"],
-                        "x_studio_sequence": row.get("sequence") or 10,
-                        "x_active": row.get("active", True),
-                        "x_studio_description": row.get("description") or "",
-                        "x_studio_company_id": company.id,
+                        "name": row["name"],
+                        "sequence": row.get("sequence") or 10,
+                        "active": row.get("active", True),
+                        "description": row.get("description") or "",
+                        "accounting_company_id": company.id,
                     }
                 )
                 created_vend += 1
@@ -159,7 +159,7 @@ def _ensure_res_users_47_columns(env):
         ("x_studio_char_field_169HD", "VARCHAR"),
         ("x_studio_char_field_vHXsn", "VARCHAR"),
         ("x_studio_char_field_zMp65", "VARCHAR"),
-        ("x_studio_created_date", "DATE"),
+        ("created_date", "DATE"),
         ("x_studio_created_date_1", "DATE"),
         ("x_studio_credit_limit", "NUMERIC"),
         ("x_studio_customer_group1", "INTEGER"),

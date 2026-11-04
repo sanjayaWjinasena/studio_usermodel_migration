@@ -8,11 +8,11 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='tz']" position="after">
-                <field name="x_studio_virtual_location" string="Virtual Location" options="{'no_create': True}" invisible="x_studio_company_id and x_studio_company_id != 1"/>
-                <field name="x_studio_virtual_location_1" string="Virtual Location" options="{'create_name_field': 'complete_name'}" invisible="x_studio_company_id != 2"/>
-                <field name="x_studio_source_location" string="Source Location" options="{'no_create': True}" invisible="x_studio_company_id and x_studio_company_id != 1"/>
-                <field name="x_studio_source_location_1" string="Source Location" options="{'create_name_field': 'complete_name'}" invisible="x_studio_company_id != 2"/>
-                <field name="x_studio_company_id" string="Current Company" invisible="1"/>
+                <field name="virtual_location" string="Virtual Location" options="{'no_create': True}" invisible="accounting_company_id and accounting_company_id != 1"/>
+                <field name="virtual_location_1" string="Virtual Location" options="{'create_name_field': 'complete_name'}" invisible="accounting_company_id != 2"/>
+                <field name="source_location" string="Source Location" options="{'no_create': True}" invisible="accounting_company_id and accounting_company_id != 1"/>
+                <field name="source_location_1" string="Source Location" options="{'create_name_field': 'complete_name'}" invisible="accounting_company_id != 2"/>
+                <field name="accounting_company_id" string="Current Company" invisible="1"/>
             </xpath>
 
             <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
@@ -56,17 +56,17 @@
         <xpath expr="//field[@name='active']" position="attributes">
           <attribute name="invisible"/></xpath>
         <xpath expr="//field[@name='tz']" position="after">
-          <field name="x_studio_virtual_location" string="Virtual Location" options="{&quot;no_create&quot;:true}" invisible="x_studio_company_id != 1"/>
-          <field name="x_studio_virtual_location_1" options="{'create_name_field': 'complete_name'}" string="Virtual Location" invisible="x_studio_company_id != 2"/>
-          <field name="x_studio_source_location" string="Source Location" options="{&quot;no_create&quot;:true}" invisible="x_studio_company_id != 1"/>
-          <field name="x_studio_source_location_1" options="{'create_name_field': 'complete_name'}" string="Source Location" invisible="x_studio_company_id != 2"/>
-          <field name="x_studio_company_id" string="Current Company" invisible="1"/>
+          <field name="virtual_location" string="Virtual Location" options="{&quot;no_create&quot;:true}" invisible="accounting_company_id != 1"/>
+          <field name="virtual_location_1" options="{'create_name_field': 'complete_name'}" string="Virtual Location" invisible="accounting_company_id != 2"/>
+          <field name="source_location" string="Source Location" options="{&quot;no_create&quot;:true}" invisible="accounting_company_id != 1"/>
+          <field name="source_location_1" options="{'create_name_field': 'complete_name'}" string="Source Location" invisible="accounting_company_id != 2"/>
+          <field name="accounting_company_id" string="Current Company" invisible="1"/>
         </xpath>
         <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
           <page string="Recruitment" name="studio_page_AZpEI">
             <group name="studio_group_AZpEI">
               <group name="studio_group_AZpEI_left">
-                <field name="x_studio_recr_stages" string="Recruitment Stages" widget="many2many_tags" options="{&quot;color_field&quot;: &quot;x_color&quot;}"/>
+                <field name="x_studio_recr_stages" string="Recruitment Stages" widget="many2many_tags" options="{&quot;color_field&quot;: &quot;color&quot;}"/>
               </group>
               <group name="studio_group_AZpEI_right"/>
             </group>

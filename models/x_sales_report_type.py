@@ -16,12 +16,12 @@ from odoo import fields, models
 
 class XSalesReportType(models.Model):
     _name = "x_sales_report_type"
-    _rec_name = "x_name"  # Clear-DB Studio model: records are named by x_name
+    _rec_name = "name"  # Clear-DB Studio model: records are named by name
     _description = "X Sales Report Type"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    x_active = fields.Boolean(string="Active")
-    x_name = fields.Char(string="Report Name")
+    active = fields.Boolean(string="Active")
+    name = fields.Char(string="Report Name")
     x_studio_report_code = fields.Selection(
         [
             ("Daily Sales Summary", "Daily Sales Summary"),
@@ -42,7 +42,7 @@ class XSalesReportType(models.Model):
         ],
         string="Report Code",
     )
-    x_studio_sequence = fields.Integer(string="Sequence")
+    sequence = fields.Integer(string="Sequence")
 
     # One2manys navigating through inverse M2Os that also live in this
     # module (see account_move.py, account_move_line.py, sale_order_line.py).
