@@ -107,15 +107,6 @@ class ResUsers(models.Model):
     # surfaces from Clear-DB. Not populated on dev; declared as inert
     # placeholders so the ported view arch validates. Fix-repair
     # ports the actual super_user booleans (see repair_admin_groups.py).
-    super_user = fields.Boolean(string="Super User (All Items)")
-    super_user_melt_items = fields.Boolean(
-        string="Super User (Melt Items)",
-    )
-    attendance_administrator = fields.Boolean()
-
-    # v0.0.7: super-user permission booleans (moved from
-    # Fix-repair/models/res_users.py). Native port of Studio
-    # server action id 2544 which enforced mutual exclusion.
     super_user = fields.Boolean(
         string="Super User (All Items)",
         copy=True,
@@ -124,6 +115,11 @@ class ResUsers(models.Model):
         string="Super User (Melt Items)",
         copy=True,
     )
+    attendance_administrator = fields.Boolean()
+
+    # v0.0.7: super-user permission booleans (moved from
+    # Fix-repair/models/res_users.py, declared above). Native port of Studio
+    # server action id 2544 which enforced mutual exclusion.
 
     def _super_user_validate(self):
         """Studio server action id 2544 native port. Guards that a
