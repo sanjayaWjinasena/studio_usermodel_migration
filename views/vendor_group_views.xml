@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <!-- STRIPPED act_window_2677_customer_groups: model customer_groups not on target -->
-<record id="act_window_1444_vendor_groups" model="ir.actions.act_window">
+<record id="action_vendor_groups" model="ir.actions.act_window">
     <field name="name">Vendor Groups</field>
     <field name="res_model">vendor_group</field>
     <field name="view_mode">tree,form</field>
@@ -18,7 +18,7 @@
                 </p>
             </field>
   </record>
-    <record id="view_3120_default_form_view_for_x_vendor_group_e" model="ir.ui.view">
+    <record id="view_vendor_group_form" model="ir.ui.view">
       <field name="name">Default form view for vendor_group</field>
       <field name="model">vendor_group</field>
       <field name="type">form</field>
@@ -47,7 +47,7 @@
 </form>
       </field>
     </record>
-    <record id="view_3119_default_list_view_for_x_vendor_group_e" model="ir.ui.view">
+    <record id="view_vendor_group_list" model="ir.ui.view">
       <field name="name">Default list view for vendor_group</field>
       <field name="model">vendor_group</field>
       <field name="type">tree</field>
@@ -58,7 +58,7 @@
 </tree>
       </field>
     </record>
-    <record id="view_3121_default_search_view_for_x_vendor_group_e" model="ir.ui.view">
+    <record id="view_vendor_group_search" model="ir.ui.view">
       <field name="name">Default search view for vendor_group</field>
       <field name="model">vendor_group</field>
       <field name="type">search</field>
@@ -72,18 +72,18 @@
       </field>
     </record>
     <!-- STRIPPED: payment_method not on res.partner -->
-<record id="view_final_x_vendor_group_odoo_studio_default_form_view_for_x_vendor_group_customizati" model="ir.ui.view">
+<record id="view_default_form_view_for_vendor_group_inherit" model="ir.ui.view">
       <field name="name">Odoo Studio: Default form view for vendor_group customization</field>
       <field name="model">vendor_group</field>
       <field name="type">form</field>
       <field name="priority">99</field>
-      <field name="inherit_id" ref="studio_usermodel_migration.view_3120_default_form_view_for_x_vendor_group_e"/>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_vendor_group_form"/>
       <field name="mode">extension</field>
       <field name="arch" type="xml">
         <data>
   <xpath expr="//widget[@name='web_ribbon']" position="before">
     <div name="button_box" class="oe_button_box">
-      <button class="oe_stat_button" icon="fa-sitemap" type="action" name="%(studio_usermodel_migration.act_window_1448_vendors)d" invisible="vendor_group__res_partner_count == 0">
+      <button class="oe_stat_button" icon="fa-sitemap" type="action" name="%(studio_usermodel_migration.action_vendors)d" invisible="vendor_group__res_partner_count == 0">
         <field widget="statinfo" name="vendor_group__res_partner_count" string="Vendors"/>
       </button>
     </div>
@@ -113,12 +113,12 @@
 </data>
       </field>
     </record>
-    <record id="view_final_x_vendor_group_odoo_studio_default_list_view_for_x_vendor_group_customizati" model="ir.ui.view">
+    <record id="view_default_list_view_for_vendor_group_inherit" model="ir.ui.view">
       <field name="name">Odoo Studio: Default list view for vendor_group customization</field>
       <field name="model">vendor_group</field>
       <field name="type">tree</field>
       <field name="priority">99</field>
-      <field name="inherit_id" ref="studio_usermodel_migration.view_3119_default_list_view_for_x_vendor_group_e"/>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_vendor_group_list"/>
       <field name="mode">extension</field>
       <field name="arch" type="xml">
         <data>

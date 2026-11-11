@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="act_window_1443_customer_groups" model="ir.actions.act_window">
+  <record id="action_customer_groups" model="ir.actions.act_window">
     <field name="name">Customer Groups</field>
     <field name="res_model">customer_group</field>
     <field name="view_mode">tree,form</field>
@@ -17,7 +17,7 @@
                 </p>
             </field>
   </record>
-    <record id="view_3114_default_form_view_for_x_customer_group_e" model="ir.ui.view">
+    <record id="view_customer_group_form" model="ir.ui.view">
       <field name="name">Default form view for customer_group</field>
       <field name="model">customer_group</field>
       <field name="type">form</field>
@@ -46,7 +46,7 @@
 </form>
       </field>
     </record>
-    <record id="view_3113_default_list_view_for_x_customer_group_e" model="ir.ui.view">
+    <record id="view_customer_group_list" model="ir.ui.view">
       <field name="name">Default list view for customer_group</field>
       <field name="model">customer_group</field>
       <field name="type">tree</field>
@@ -57,7 +57,7 @@
 </tree>
       </field>
     </record>
-    <record id="view_3115_default_search_view_for_x_customer_group_e" model="ir.ui.view">
+    <record id="view_customer_group_search" model="ir.ui.view">
       <field name="name">Default search view for customer_group</field>
       <field name="model">customer_group</field>
       <field name="type">search</field>
@@ -70,12 +70,12 @@
 </search>
       </field>
     </record>
-    <record id="view_final_x_customer_group_odoo_studio_default_list_view_for_x_customer_group_customiza" model="ir.ui.view">
+    <record id="view_default_list_view_for_customer_group_inherit" model="ir.ui.view">
       <field name="name">Odoo Studio: Default list view for customer_group customization</field>
       <field name="model">customer_group</field>
       <field name="type">tree</field>
       <field name="priority">99</field>
-      <field name="inherit_id" ref="studio_usermodel_migration.view_3113_default_list_view_for_x_customer_group_e"/>
+      <field name="inherit_id" ref="studio_usermodel_migration.view_customer_group_list"/>
       <field name="mode">extension</field>
       <field name="arch" type="xml">
         <data>

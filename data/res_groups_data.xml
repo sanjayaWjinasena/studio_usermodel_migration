@@ -19,7 +19,7 @@
       <field name="body_html" type="html"><p style="margin:0px 0 12px 0;box-sizing:border-box;">User Group rights updated,</p></field>
     </record>
     </data>
-  <record id="server_action_2266_janitha_ranasinghe" model="ir.actions.server">
+  <record id="action_janitha_ranasinghe" model="ir.actions.server">
     <field name="name">Janitha Ranasinghe</field>
     <field name="model_id" ref="base.model_res_groups"/>
     <field name="state">code</field>
@@ -36,11 +36,11 @@ env['mail.mail'].create({
 }).send()
 ]]></field>
   </record>
-  <record id="base_automation_208_janitha_ranasinghe" model="base.automation">
+  <record id="automation_janitha_ranasinghe" model="base.automation">
     <field name="name">Janitha Ranasinghe</field>
     <field name="active" eval="True"/>
     <field name="model_id" ref="base.model_res_groups"/>
     <field name="trigger">on_create_or_write</field>
-    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2266_janitha_ranasinghe')])]"/>
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.action_janitha_ranasinghe')])]"/>
   </record>
 </odoo>
