@@ -19,28 +19,28 @@ class XSalesReportModel(models.Model):
     _description = "X Sales Report Model"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    active = fields.Boolean(string="Active")
-    name = fields.Char(string="Name")
+    active = fields.Boolean()
+    name = fields.Char()
 
     # --- Basic scalar fields ------------------------------------------
     actual_gp_ = fields.Float(string="Actual GP")
-    actuals = fields.Boolean(string="Actuals")
+    actuals = fields.Boolean()
     as_on_date = fields.Date(string="As on Date")
     as_on_date_1 = fields.Date(string="From Date")
     as_on_date_2 = fields.Date(string="To Date")
-    auto_generated = fields.Boolean(string="Auto Generated")
+    auto_generated = fields.Boolean()
     contingency_ = fields.Float(string="Contingency %")
-    created_date = fields.Date(string="Created Date")
-    date_updated = fields.Boolean(string="Date Updated")
+    created_date = fields.Date()
+    date_updated = fields.Boolean()
     distributor_addition = fields.Float(string="Distributor Addition %")
     estimated_gp_ = fields.Float(string="Estimated GP")
     factory_oh = fields.Float(string="Factory OH")
     factory_oh_labour = fields.Float(string="Factory OH (Labour)")
-    financial_progress = fields.Float(string="Financial Progress")
-    from_date = fields.Date(string="From Date")
+    financial_progress = fields.Float()
+    from_date = fields.Date()
     idling_rate = fields.Float(string="Idling Rate %")
-    management_purpose = fields.Boolean(string="Management Purpose")
-    month_end_entry_updated = fields.Boolean(string="Month End Entry Updated")
+    management_purpose = fields.Boolean()
+    month_end_entry_updated = fields.Boolean()
     oh_absorbed_2_factory = fields.Float(string="OH Absorbed 2 (Factory)")
     oh_absorbed_2_other = fields.Float(string="OH Absorbed 2 (Other)")
     oh_absorbed_2_sales = fields.Float(string="OH Absorbed 2 (Sales)")
@@ -59,28 +59,24 @@ class XSalesReportModel(models.Model):
     selection_field_Fbw0x = fields.Selection(
         [("Draft", "Draft"), ("Done", "Done")], string="Status"
     )
-    sequence = fields.Integer(string="Sequence")
+    sequence = fields.Integer()
     sscl = fields.Float(string="SSCL %")
 
     # --- Many2one to standard modules already in this module's deps ---
-    created_from_project_update = fields.Many2one(
-        "project.update", string="Created From Project Update"
-    )
+    created_from_project_update = fields.Many2one("project.update")
     customer = fields.Many2many(
         "res.partner",
         "x_sales_report_model_x_studio_customer_rel",
         "host_id",
         "target_id",
-        string="Customer",
     )
-    project_no = fields.Many2one("project.project", string="Project No")
-    report_type = fields.Many2one("sales_report_type", string="Report Type")
+    project_no = fields.Many2one("project.project")
+    report_type = fields.Many2one("sales_report_type")
     sales_centre = fields.Many2many(
         "crm.team",
         "x_sales_report_model_x_studio_sales_centre_rel",
         "host_id",
         "target_id",
-        string="Sales Centre",
     )
 
     # Direct O2Ms to x_rm_* models (16 total) NOT declared here.

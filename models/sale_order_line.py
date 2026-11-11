@@ -12,5 +12,4 @@ class SaleOrderLine(models.Model):
 
     sales_report_type = fields.Many2one(
         "sales_report_type",
-        string="Sales Report Type",
     )

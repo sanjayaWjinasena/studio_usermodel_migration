@@ -18,21 +18,19 @@ class XVendorGroup(models.Model):
     _rec_name = "name"
     _order = "sequence asc, id asc"
 
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(default=True)
     name = fields.Char(string="Name", required=True)
-    sequence = fields.Integer(string="Sequence", default=10)
-    description = fields.Char(string="Description")
+    sequence = fields.Integer(default=10)
+    description = fields.Char()
     accounting_company_id = fields.Many2one(
         "res.company",
         string="Company",
     )
     payable_account = fields.Many2one(
         "account.account",
-        string="Payable Account",
     )
     payment_term = fields.Many2one(
         "account.payment.term",
-        string="Payment Term",
     )
     one2many_field_5cEfV = fields.One2many(
         "res.partner",
@@ -57,5 +55,5 @@ class XVendorGroup(models.Model):
 class XVendorGroupGap(models.Model):
     _inherit = "vendor_group"
 
-    active = fields.Boolean(string="Active")
+    active = fields.Boolean()
     name = fields.Char(string="Code")

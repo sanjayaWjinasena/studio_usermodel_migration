@@ -16,11 +16,9 @@ class ResPartner(models.Model):
 
     customer_group = fields.Many2one(
         "customer_group",
-        string="Customer Group",
     )
     vendor_group = fields.Many2one(
         "vendor_group",
-        string="Vendor Group",
     )
     # Selection stored per-partner. On Clear-DB this stays in sync with
     # customer_group.group_type via a Studio
@@ -33,5 +31,4 @@ class ResPartner(models.Model):
             ("Distributor", "Distributor"),
             ("Dealer", "Dealer"),
         ],
-        string="Group Type",
     )

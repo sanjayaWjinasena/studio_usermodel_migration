@@ -29,10 +29,10 @@ class XCustomerGroup(models.Model):
     _rec_name = "name"
     _order = "sequence asc, id asc"
 
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(default=True)
     name = fields.Char(string="Name", required=True)
-    sequence = fields.Integer(string="Sequence", default=10)
-    description = fields.Char(string="Description")
+    sequence = fields.Integer(default=10)
+    description = fields.Char()
     accounting_company_id = fields.Many2one(
         "res.company",
         string="Company",
@@ -43,7 +43,6 @@ class XCustomerGroup(models.Model):
             ("Distributor", "Distributor"),
             ("Dealer", "Dealer"),
         ],
-        string="Group Type",
         default="General",
     )
     # Receivable account + payment term drive per-group pricing /
@@ -52,11 +51,9 @@ class XCustomerGroup(models.Model):
     # to manifest depends in v0.0.3).
     receivable_account = fields.Many2one(
         "account.account",
-        string="Receivable Account",
     )
     payment_term = fields.Many2one(
         "account.payment.term",
-        string="Payment Term",
     )
     # One2many to res.partner. On Clear-DB the inverse field is
     # `customer_group` on res.partner (declared in
@@ -89,5 +86,5 @@ class XCustomerGroup(models.Model):
 class XCustomerGroupGap(models.Model):
     _inherit = "customer_group"
 
-    active = fields.Boolean(string="Active")
+    active = fields.Boolean()
     name = fields.Char(string="Code")

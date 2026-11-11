@@ -90,7 +90,6 @@ class ResUsers(models.Model):
     # studio_usermodel_migration now loads first in the graph.
     source_location = fields.Many2one(
         "stock.location",
-        string="Source Location",
     )
     source_location_1 = fields.Many2one(
         "stock.location",
@@ -98,7 +97,6 @@ class ResUsers(models.Model):
     )
     virtual_location = fields.Many2one(
         "stock.location",
-        string="Virtual Location",
     )
     virtual_location_1 = fields.Many2one(
         "stock.location",
@@ -113,9 +111,7 @@ class ResUsers(models.Model):
     super_user_melt_items = fields.Boolean(
         string="Super User (Melt Items)",
     )
-    attendance_administrator = fields.Boolean(
-        string="Attendance Administrator",
-    )
+    attendance_administrator = fields.Boolean()
 
     # v0.0.7: super-user permission booleans (moved from
     # Fix-repair/models/res_users.py). Native port of Studio
@@ -160,13 +156,9 @@ class ResUsers(models.Model):
     # CDB has broken related=partner_id.X paths for these; source fields
     # do not exist on res.partner. See feedback-related-field-source-ordering.
     binary_field_0lxfw = fields.Binary(string="New File")
-    binary_field_0lxfw_filename = fields.Char(
-        string="Filename for binary_field_0lxfw"
-    )
+    binary_field_0lxfw_filename = fields.Char(string="Filename for binary_field_0lxfw")
     binary_field_6Qgy3 = fields.Binary(string="New File")
-    binary_field_6Qgy3_filename = fields.Char(
-        string="Filename for binary_field_6Qgy3"
-    )
+    binary_field_6Qgy3_filename = fields.Char(string="Filename for binary_field_6Qgy3")
     boolean_field_5hcBi = fields.Boolean(string="New Checkbox")
     boolean_field_IhZPZ = fields.Boolean(string="New Checkbox")
     boolean_field_iWSSd = fields.Boolean(string="New Checkbox")
@@ -176,27 +168,19 @@ class ResUsers(models.Model):
     created_date = fields.Date(string="Created DAte")
     created_date_1 = fields.Date()
     accounting_credit_limit = fields.Float(string="Credit Limit")
-    customer_group1 = fields.Many2one(
-        "customer_group", string="Customer Group1"
-    )
+    customer_group1 = fields.Many2one("customer_group")
     date_field_Gq9rN = fields.Date(string="New Date")
     date_field_TBq7w = fields.Date(string="New Date")
     float_field_73nGS = fields.Float(string="New Decimal")
     float_field_zLCsm = fields.Float(string="New Decimal")
-    mandatory_bank_gu = fields.Boolean(string="Mandatory Bank Gu")
+    mandatory_bank_gu = fields.Boolean()
     many2many_field_f1lwc = fields.Many2many("res.partner", string="Contact")
     many2one_field_3xHed = fields.Many2one("res.partner", string="Contact")
-    many2one_field_hl9yL = fields.Many2one(
-        "customer_group", string="Customer Group"
-    )
+    many2one_field_hl9yL = fields.Many2one("customer_group", string="Customer Group")
     many2one_field_jhSr4 = fields.Many2one("res.partner", string="Contact")
     many2one_field_pbZO1 = fields.Many2one("res.partner", string="Contact")
-    many2one_field_qX4FU = fields.Many2one(
-        "vendor_group", string="Vendor Group"
-    )
-    payment_term = fields.Many2one(
-        "account.payment.term", string="Payment Term-Delete"
-    )
+    many2one_field_qX4FU = fields.Many2one("vendor_group", string="Vendor Group")
+    payment_term = fields.Many2one("account.payment.term", string="Payment Term-Delete")
     related_field_49eDN = fields.Boolean(string="New Related Field")
     related_field_TZMCl = fields.Char(string="New Related Field")
     related_field_Uojrf = fields.Char(string="New Related Field")
@@ -208,27 +192,17 @@ class ResUsers(models.Model):
     related_field_ngmve = fields.Many2one(
         "account.payment.term", string="New Related Field"
     )
-    related_field_pEksg = fields.Selection(
-        selection=[], string="New Related Field"
-    )
+    related_field_pEksg = fields.Selection(selection=[], string="New Related Field")
     related_field_tLbBY = fields.Many2one(
         "account.payment.term", string="New Related Field"
     )
     related_field_xfyUN = fields.Char(string="New Related Field")
     sdfsdf = fields.Date()
-    selection_field_3FlOG = fields.Selection(
-        selection=[], string="New Selection"
-    )
-    selection_field_VAQjO = fields.Selection(
-        selection=[], string="New Selection"
-    )
-    selection_field_lm0NR = fields.Selection(
-        selection=[], string="New Selection"
-    )
-    selection_field_sDxoe = fields.Selection(
-        selection=[], string="New Selection"
-    )
+    selection_field_3FlOG = fields.Selection(selection=[], string="New Selection")
+    selection_field_VAQjO = fields.Selection(selection=[], string="New Selection")
+    selection_field_lm0NR = fields.Selection(selection=[], string="New Selection")
+    selection_field_sDxoe = fields.Selection(selection=[], string="New Selection")
     terms_of_payment = fields.Many2one(
         "account.payment.term", string="Terms of Payment"
     )
-    vendor_group1 = fields.Many2one("vendor_group", string="Vendor Group1")
+    vendor_group1 = fields.Many2one("vendor_group")

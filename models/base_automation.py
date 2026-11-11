@@ -12,7 +12,7 @@ from odoo import fields, models
 class BaseAutomation(models.Model):
     _inherit = "base.automation"
 
-    comments = fields.Char(string="Comments", copy=True)
+    comments = fields.Char(copy=True)
     status = fields.Selection(
         [
             ("None", "None"),
@@ -20,6 +20,5 @@ class BaseAutomation(models.Model):
             ("Archived in V15", "Archived in V15"),
             ("Reactivated in V15", "Reactivated in V15"),
         ],
-        string="Status",
         copy=True,
     )
