@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- ============================================================
-             base.automation
-             ============================================================ -->
-        <record id="field_base_automation_x_studio_comments" model="ir.model.fields">
-            <field name="name">x_studio_comments</field>
-            <field name="model">base.automation</field>
-            <field name="model_id" ref="base_automation.model_base_automation"/>
-            <field name="ttype">char</field>
-            <field name="field_description">Comments</field>
-            <field name="state">manual</field>
-            <field name="store" eval="True"/>
-            <field name="copied" eval="True"/>
-        </record>
-        <record id="field_base_automation_x_studio_status" model="ir.model.fields">
-            <field name="name">x_studio_status</field>
-            <field name="model">base.automation</field>
-            <field name="model_id" ref="base_automation.model_base_automation"/>
-            <field name="ttype">selection</field>
-            <field name="field_description">Status</field>
-            <field name="state">manual</field>
-            <field name="store" eval="True"/>
-            <field name="copied" eval="True"/>
-            <field name="selection">[('None', 'None'), ('Active in V15', 'Active in V15'), ('Archived in V15', 'Archived in V15'), ('Reactivated in V15', 'Reactivated in V15')]</field>
-        </record>
+        <!-- base.automation: Comments / Status are declared in models/base_automation.py -->
         <!-- ============================================================
              ir.rule
              ============================================================ -->

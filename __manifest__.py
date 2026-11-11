@@ -34,7 +34,7 @@
     # during related-field setup) and blocked all further upgrades
     # on the env. Reverted here so the env can move again while we
     # diagnose offline.
-    "depends": ["base", "hr_recruitment", "account", "bank-data"],
+    "depends": ["base", "base_automation", "hr_recruitment", "account", "bank-data"],
     "data": [
         "security/studio_usermodel_migration_security.xml",
         "security/removed_handmade_access_rights.xml",

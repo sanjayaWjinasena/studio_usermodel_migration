@@ -1,3 +1,4 @@
+from . import base_automation
 from . import res_users
 from . import x_customer_group
 from . import x_vendor_group
