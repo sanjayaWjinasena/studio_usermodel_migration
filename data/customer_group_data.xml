@@ -2,7 +2,7 @@
 <odoo>
   <record id="sa_f5_x_customer_group_jin_company_id_in_customer_group" model="ir.actions.server">
     <field name="name">JIN - Company Id in Customer Group</field>
-    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="model_id" search="[('model', '=', 'customer_group')]"/>
     <field name="state">code</field>
     <field name="code"><![CDATA[company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
 company = env['res.company'].browse(company_id)
@@ -13,7 +13,7 @@ record['accounting_company_id'] = company.id]]></field>
   </record>
   <record id="server_action_2676_jin_company_id_in_customer_group" model="ir.actions.server">
     <field name="name">JIN - Company Id in Customer Group</field>
-    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="model_id" search="[('model', '=', 'customer_group')]"/>
     <field name="state">code</field>
     <field name="usage">base_automation</field>
     <field name="code">company_id = env.context.get('allowed_company_ids', [env.user.company_id.id])[0]
@@ -25,14 +25,14 @@ record['accounting_company_id'] = company.id</field>
 <record id="base_automation_312_jin_company_id_in_customer_group" model="base.automation">
     <field name="name">JIN - Company Id in Customer Group</field>
     <field name="active" eval="True"/>
-    <field name="model_id" search="[('model', '=', 'x_customer_group')]"/>
+    <field name="model_id" search="[('model', '=', 'customer_group')]"/>
     <field name="trigger">on_create_or_write</field>
-    <field name="trigger_field_ids" eval="[(6, 0, [ref('studio_usermodel_migration.field_x_customer_group__create_date')])]"/>
+    <field name="trigger_field_ids" eval="[(6, 0, [ref('studio_usermodel_migration.field_customer_group__create_date')])]"/>
     <field name="action_server_ids" eval="[(6, 0, [ref('studio_usermodel_migration.server_action_2676_jin_company_id_in_customer_group')])]"/>
   </record>
   <record id="server_action_2676_jin_company_id_in_customer_group" model="ir.actions.server">
     <field name="name">JIN - Company Id in Customer Group</field>
-    <field name="model_id" ref="studio_usermodel_migration.model_x_customer_group"/>
+    <field name="model_id" ref="studio_usermodel_migration.model_customer_group"/>
     <field name="state">code</field>
     <field name="usage">base_automation</field>
     <field name="code"><![CDATA[
@@ -44,15 +44,15 @@ record['accounting_company_id'] = company.id
   </record>
     <data noupdate="1">
     <record id="default_213_x_customer_group_active" model="ir.default">
-      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__active"/>
+      <field name="field_id" ref="studio_usermodel_migration.field_customer_group__active"/>
       <field name="json_value">true</field>
     </record>
     <record id="default_214_x_customer_group_sequence" model="ir.default">
-      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__sequence"/>
+      <field name="field_id" ref="studio_usermodel_migration.field_customer_group__sequence"/>
       <field name="json_value">10</field>
     </record>
-    <record id="default_230_x_customer_group_x_studio_group_type" model="ir.default">
-      <field name="field_id" ref="studio_usermodel_migration.field_x_customer_group__x_studio_group_type"/>
+    <record id="default_230_x_customer_group_group_type" model="ir.default">
+      <field name="field_id" ref="studio_usermodel_migration.field_customer_group__group_type"/>
       <field name="json_value">"General"</field>
     </record>
     </data>

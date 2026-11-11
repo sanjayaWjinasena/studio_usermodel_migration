@@ -1,7 +1,7 @@
 Jinasena : Masterdata : User
 ============================
 
-Ports res.users Studio customisations + customer/vendor group catalogues (x_customer_group, x_vendor_group) into proper Python modules. Companion to Fix-repair, which owns the repair-flow user fields (location m2o, super-user booleans). This module owns res.users Studio fields that don't fit the repair-workflow domain plus the customer/vendor classification master data (which drives per-partner payment terms + receivable/payable accounts).
+Ports res.users Studio customisations + customer/vendor group catalogues (customer_group, vendor_group) into proper Python modules. Companion to Fix-repair, which owns the repair-flow user fields (location m2o, super-user booleans). This module owns res.users Studio fields that don't fit the repair-workflow domain plus the customer/vendor classification master data (which drives per-partner payment terms + receivable/payable accounts).
 
 Information
 -----------

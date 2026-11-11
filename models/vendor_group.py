@@ -1,6 +1,6 @@
-"""x_vendor_group — Studio custom catalogue model ported to Python.
+"""vendor_group — Studio custom catalogue model ported to Python.
 
-Sister to x_customer_group but for vendors (payable-side classification).
+Sister to customer_group but for vendors (payable-side classification).
 Clear-DB has 20+ rows across three companies covering categories like
 CA-PUR (Cash Purchase Vendors), CR-PUR (Credit Purchase Vendors),
 IMP-VEN (Import Vendors), EMP-PAY (Employee-related payments), etc.
@@ -12,7 +12,7 @@ from odoo import fields, models
 
 
 class XVendorGroup(models.Model):
-    _name = "x_vendor_group"
+    _name = "vendor_group"
     _description = "Vendor Group"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = "name"
@@ -26,21 +26,21 @@ class XVendorGroup(models.Model):
         "res.company",
         string="Company",
     )
-    x_studio_payable_account = fields.Many2one(
+    payable_account = fields.Many2one(
         "account.account",
         string="Payable Account",
     )
-    x_studio_payment_term = fields.Many2one(
+    payment_term = fields.Many2one(
         "account.payment.term",
         string="Payment Term",
     )
-    x_studio_one2many_field_5cEfV = fields.One2many(
+    one2many_field_5cEfV = fields.One2many(
         "res.partner",
-        "x_studio_vendor_group",
+        "vendor_group",
         string="Vendors",
     )
     # v0.0.5: Studio-auto smart-button counter of linked vendors.
-    x_x_studio_vendor_group__res_partner_count = fields.Integer(
+    vendor_group__res_partner_count = fields.Integer(
         string="Res Partner Count",
         compute="_compute_res_partner_count",
         store=False,
@@ -49,13 +49,13 @@ class XVendorGroup(models.Model):
     def _compute_res_partner_count(self):
         Partner = self.env["res.partner"]
         for rec in self:
-            rec.x_x_studio_vendor_group__res_partner_count = Partner.search_count(
-                [("x_studio_vendor_group", "=", rec.id)]
+            rec.vendor_group__res_partner_count = Partner.search_count(
+                [("vendor_group", "=", rec.id)]
             )
 
 
 class XVendorGroupGap(models.Model):
-    _inherit = "x_vendor_group"
+    _inherit = "vendor_group"
 
     active = fields.Boolean(string="Active")
     name = fields.Char(string="Code")

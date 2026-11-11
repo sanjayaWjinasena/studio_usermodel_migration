@@ -2,11 +2,11 @@
     # upgrade-testing branch: data files below are commented out - this branch installs
     # functions only, no data is seeded.
     "name": "Jinasena : Masterdata : User",
-    "version": "17.0.1.0.65",
+    "version": "17.0.1.0.66",
     "post_init_hook": "post_init_hook",
     "summary": (
         "Ports res.users Studio customisations + customer/vendor group "
-        "catalogues (x_customer_group, x_vendor_group) into proper "
+        "catalogues (customer_group, vendor_group) into proper "
         "Python modules. Companion to Fix-repair, which owns the "
         "repair-flow user fields (location m2o, super-user booleans). "
         "This module owns res.users Studio fields that don't fit the "
@@ -24,13 +24,13 @@
     #     -> studio_usermodel_migration
     # None of the 3 modules could install because each waited on
     # the others. Fix-repair only used this module at runtime (view
-    # references to x_customer_group / x_vendor_group), never at
+    # references to customer_group / vendor_group), never at
     # schema/model-load time -- so the manifest dep was over-strict.
-    # Runtime resolution via env['x_customer_group'] still works
+    # Runtime resolution via env['customer_group'] still works
     # because both modules end up loaded together.
     # v0.0.14 reverts the sale dep added in v0.0.13. The upstream
-    # migration of x_sales_report_type failed during Odoo registry
-    # setup on repair-test-101 (KeyError on x_studio_journal_items_id
+    # migration of sales_report_type failed during Odoo registry
+    # setup on repair-test-101 (KeyError on journal_items_id
     # during related-field setup) and blocked all further upgrades
     # on the env. Reverted here so the env can move again while we
     # diagnose offline.
@@ -40,14 +40,14 @@
         "security/removed_handmade_access_rights.xml",
         "security/ir.model.access.csv",
         "data/ir_model_data.xml",
-        "data/x_customer_group_data.xml",
-        "data/x_vendor_group_data.xml",
+        "data/customer_group_data.xml",
+        "data/vendor_group_data.xml",
         "data/defaults_f2.xml",
         "data/res_groups_data.xml",
         "views/res_users_views.xml",
-        "views/x_customer_group_views.xml",
+        "views/customer_group_views.xml",
         "views/res_partner_views.xml",
-        "views/x_vendor_group_views.xml",
+        "views/vendor_group_views.xml",
         "views/res_groups_views.xml",
         "views/studio_usermodel_migration_menus.xml",
     ],

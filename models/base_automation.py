@@ -12,8 +12,8 @@ from odoo import fields, models
 class BaseAutomation(models.Model):
     _inherit = "base.automation"
 
-    x_studio_comments = fields.Char(string="Comments", copy=True)
-    x_studio_status = fields.Selection(
+    comments = fields.Char(string="Comments", copy=True)
+    status = fields.Selection(
         [
             ("None", "None"),
             ("Active in V15", "Active in V15"),

@@ -6,7 +6,7 @@
       <field name="name">Vendors</field>
       <field name="res_model">res.partner</field>
       <field name="view_mode">tree,form</field>
-      <field name="domain">[('x_studio_vendor_group', '=', active_id)]</field>
-      <field name="context">{'search_default_x_studio_vendor_group': active_id,'default_x_studio_vendor_group': active_id}</field>
+      <field name="domain">[('vendor_group', '=', active_id)]</field>
+      <field name="context">{'search_default_vendor_group': active_id,'default_vendor_group': active_id}</field>
     </record>
 </odoo>

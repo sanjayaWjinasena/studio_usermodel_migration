@@ -1,5 +1,5 @@
 {
-  "x_customer_group": [
+  "customer_group": [
     {
       "name": "CAC",
       "company_name": "Jinasena (Pvt) Ltd.",
@@ -193,7 +193,7 @@
       "group_type": "General"
     }
   ],
-  "x_vendor_group": [
+  "vendor_group": [
     {
       "name": "CA-PUR",
       "company_name": "Jinasena Agricultural Machinery (Pvt) Ltd.",

@@ -12,20 +12,20 @@ Fields:
   - accounting_company_id           (m2o res.company) — per-user
       "Current Company" flag used by view-arch invisible expressions
       to swap between _1 fields across companies
-  - x_studio_recr_stages          (m2m hr.recruitment.stage) —
+  - recr_stages          (m2m hr.recruitment.stage) —
       Recruitment tab
-  - x_x_studio_users_stock_location_stock_location_count (int) —
+  - users_stock_location_stock_location_count (int) —
       companion counter for the stock.location m2m on stock.location
-  - x_x_studio_users_internal_transfer_stock_location_count (int) —
+  - users_internal_transfer_stock_location_count (int) —
       companion counter for the second stock.location m2m
 """
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
-# NOTE (v1.0.60): the Many2one(s) x_studio_customer_group2 /
-# x_studio_many2one_field_3LBKs /
-# x_studio_many2one_field_9xxxo / x_studio_many2one_field_V9cmo (-> x_customer_groups)
+# NOTE (v1.0.60): the Many2one(s) customer_group2 /
+# many2one_field_3LBKs /
+# many2one_field_9xxxo / many2one_field_V9cmo (-> customer_groups)
 # were MOVED to BugFix-Studio-Misc v0.0.112 models/res_users.py.
 # Their comodel is owned by a DOWNSTREAM module; declared here they were
 # `_unknown` for the whole upgrade-mode registry build (see BugFix-Purchase
@@ -39,7 +39,7 @@ class ResUsers(models.Model):
         "res.company",
         string="Current Company",
     )
-    x_studio_recr_stages = fields.Many2many(
+    recr_stages = fields.Many2many(
         "hr.recruitment.stage",
         relation="res_users_studio_recr_stages_rel",
         column1="user_id",
@@ -52,10 +52,10 @@ class ResUsers(models.Model):
     # stat buttons (actions 2487/2488) are DB-specific and skipped
     # in the ported view arch. Left here as sentinels for arch
     # compatibility in case a future view inherit references them.
-    x_x_studio_users_stock_location_stock_location_count = fields.Integer(
+    users_stock_location_stock_location_count = fields.Integer(
         string="Users (Stock Location) count",
     )
-    x_x_studio_users_internal_transfer_stock_location_count = fields.Integer(
+    users_internal_transfer_stock_location_count = fields.Integer(
         string="Users (Internal Transfer) count",
     )
     # v0.0.2: the two res.users-side halves of the Studio m2m to
@@ -65,14 +65,14 @@ class ResUsers(models.Model):
     # both sides read/write the same relation rows. This lets Studio
     # arch that references the fields from either direction resolve
     # to a single set of user↔location links.
-    x_studio_many2many_field_Q50dg = fields.Many2many(
+    many2many_field_Q50dg = fields.Many2many(
         "stock.location",
         relation="stock_location_users_stock_location_rel",
         column1="user_id",
         column2="location_id",
         string="Inventory Locations (Stock)",
     )
-    x_studio_many2many_field_bQRSA = fields.Many2many(
+    many2many_field_bQRSA = fields.Many2many(
         "stock.location",
         relation="stock_location_users_internal_transfer_rel",
         column1="user_id",
@@ -109,22 +109,22 @@ class ResUsers(models.Model):
     # surfaces from Clear-DB. Not populated on dev; declared as inert
     # placeholders so the ported view arch validates. Fix-repair
     # ports the actual super_user booleans (see repair_admin_groups.py).
-    x_studio_super_user = fields.Boolean(string="Super User (All Items)")
-    x_studio_super_user_melt_items = fields.Boolean(
+    super_user = fields.Boolean(string="Super User (All Items)")
+    super_user_melt_items = fields.Boolean(
         string="Super User (Melt Items)",
     )
-    x_studio_attendance_administrator = fields.Boolean(
+    attendance_administrator = fields.Boolean(
         string="Attendance Administrator",
     )
 
     # v0.0.7: super-user permission booleans (moved from
     # Fix-repair/models/res_users.py). Native port of Studio
     # server action id 2544 which enforced mutual exclusion.
-    x_studio_super_user = fields.Boolean(
+    super_user = fields.Boolean(
         string="Super User (All Items)",
         copy=True,
     )
-    x_studio_super_user_melt_items = fields.Boolean(
+    super_user_melt_items = fields.Boolean(
         string="Super User (Melt Items)",
         copy=True,
     )
@@ -133,7 +133,7 @@ class ResUsers(models.Model):
         """Studio server action id 2544 native port. Guards that a
         single user cannot hold BOTH super-user permissions."""
         for record in self:
-            if record.x_studio_super_user_melt_items and record.x_studio_super_user:
+            if record.super_user_melt_items and record.super_user:
                 raise UserError(
                     _(
                         "Both the super user permissions can not be "
@@ -159,76 +159,76 @@ class ResUsers(models.Model):
     # (or v0.46 as belt-and-braces). Plain fields, no related=.
     # CDB has broken related=partner_id.X paths for these; source fields
     # do not exist on res.partner. See feedback-related-field-source-ordering.
-    x_studio_binary_field_0lxfw = fields.Binary(string="New File")
-    x_studio_binary_field_0lxfw_filename = fields.Char(
-        string="Filename for x_studio_binary_field_0lxfw"
+    binary_field_0lxfw = fields.Binary(string="New File")
+    binary_field_0lxfw_filename = fields.Char(
+        string="Filename for binary_field_0lxfw"
     )
-    x_studio_binary_field_6Qgy3 = fields.Binary(string="New File")
-    x_studio_binary_field_6Qgy3_filename = fields.Char(
-        string="Filename for x_studio_binary_field_6Qgy3"
+    binary_field_6Qgy3 = fields.Binary(string="New File")
+    binary_field_6Qgy3_filename = fields.Char(
+        string="Filename for binary_field_6Qgy3"
     )
-    x_studio_boolean_field_5hcBi = fields.Boolean(string="New Checkbox")
-    x_studio_boolean_field_IhZPZ = fields.Boolean(string="New Checkbox")
-    x_studio_boolean_field_iWSSd = fields.Boolean(string="New Checkbox")
-    x_studio_char_field_169HD = fields.Char(string="New Text")
-    x_studio_char_field_vHXsn = fields.Char(string="New Text")
-    x_studio_char_field_zMp65 = fields.Char(string="New Text")
+    boolean_field_5hcBi = fields.Boolean(string="New Checkbox")
+    boolean_field_IhZPZ = fields.Boolean(string="New Checkbox")
+    boolean_field_iWSSd = fields.Boolean(string="New Checkbox")
+    char_field_169HD = fields.Char(string="New Text")
+    char_field_vHXsn = fields.Char(string="New Text")
+    char_field_zMp65 = fields.Char(string="New Text")
     created_date = fields.Date(string="Created DAte")
-    x_studio_created_date_1 = fields.Date()
-    x_studio_credit_limit = fields.Float(string="Credit Limit")
-    x_studio_customer_group1 = fields.Many2one(
-        "x_customer_group", string="Customer Group1"
+    created_date_1 = fields.Date()
+    accounting_credit_limit = fields.Float(string="Credit Limit")
+    customer_group1 = fields.Many2one(
+        "customer_group", string="Customer Group1"
     )
-    x_studio_date_field_Gq9rN = fields.Date(string="New Date")
-    x_studio_date_field_TBq7w = fields.Date(string="New Date")
-    x_studio_float_field_73nGS = fields.Float(string="New Decimal")
-    x_studio_float_field_zLCsm = fields.Float(string="New Decimal")
-    x_studio_mandatory_bank_gu = fields.Boolean(string="Mandatory Bank Gu")
-    x_studio_many2many_field_f1lwc = fields.Many2many("res.partner", string="Contact")
-    x_studio_many2one_field_3xHed = fields.Many2one("res.partner", string="Contact")
-    x_studio_many2one_field_hl9yL = fields.Many2one(
-        "x_customer_group", string="Customer Group"
+    date_field_Gq9rN = fields.Date(string="New Date")
+    date_field_TBq7w = fields.Date(string="New Date")
+    float_field_73nGS = fields.Float(string="New Decimal")
+    float_field_zLCsm = fields.Float(string="New Decimal")
+    mandatory_bank_gu = fields.Boolean(string="Mandatory Bank Gu")
+    many2many_field_f1lwc = fields.Many2many("res.partner", string="Contact")
+    many2one_field_3xHed = fields.Many2one("res.partner", string="Contact")
+    many2one_field_hl9yL = fields.Many2one(
+        "customer_group", string="Customer Group"
     )
-    x_studio_many2one_field_jhSr4 = fields.Many2one("res.partner", string="Contact")
-    x_studio_many2one_field_pbZO1 = fields.Many2one("res.partner", string="Contact")
-    x_studio_many2one_field_qX4FU = fields.Many2one(
-        "x_vendor_group", string="Vendor Group"
+    many2one_field_jhSr4 = fields.Many2one("res.partner", string="Contact")
+    many2one_field_pbZO1 = fields.Many2one("res.partner", string="Contact")
+    many2one_field_qX4FU = fields.Many2one(
+        "vendor_group", string="Vendor Group"
     )
-    x_studio_payment_term = fields.Many2one(
+    payment_term = fields.Many2one(
         "account.payment.term", string="Payment Term-Delete"
     )
-    x_studio_related_field_49eDN = fields.Boolean(string="New Related Field")
-    x_studio_related_field_TZMCl = fields.Char(string="New Related Field")
-    x_studio_related_field_Uojrf = fields.Char(string="New Related Field")
-    x_studio_related_field_UwEX1 = fields.Char(string="New Related Field")
-    x_studio_related_field_YVuN0 = fields.Char(string="New Related Field")
-    x_studio_related_field_j3X4Q = fields.Many2one(
+    related_field_49eDN = fields.Boolean(string="New Related Field")
+    related_field_TZMCl = fields.Char(string="New Related Field")
+    related_field_Uojrf = fields.Char(string="New Related Field")
+    related_field_UwEX1 = fields.Char(string="New Related Field")
+    related_field_YVuN0 = fields.Char(string="New Related Field")
+    related_field_j3X4Q = fields.Many2one(
         "account.payment.term", string="New Related Field"
     )
-    x_studio_related_field_ngmve = fields.Many2one(
+    related_field_ngmve = fields.Many2one(
         "account.payment.term", string="New Related Field"
     )
-    x_studio_related_field_pEksg = fields.Selection(
+    related_field_pEksg = fields.Selection(
         selection=[], string="New Related Field"
     )
-    x_studio_related_field_tLbBY = fields.Many2one(
+    related_field_tLbBY = fields.Many2one(
         "account.payment.term", string="New Related Field"
     )
-    x_studio_related_field_xfyUN = fields.Char(string="New Related Field")
-    x_studio_sdfsdf = fields.Date()
-    x_studio_selection_field_3FlOG = fields.Selection(
+    related_field_xfyUN = fields.Char(string="New Related Field")
+    sdfsdf = fields.Date()
+    selection_field_3FlOG = fields.Selection(
         selection=[], string="New Selection"
     )
-    x_studio_selection_field_VAQjO = fields.Selection(
+    selection_field_VAQjO = fields.Selection(
         selection=[], string="New Selection"
     )
-    x_studio_selection_field_lm0NR = fields.Selection(
+    selection_field_lm0NR = fields.Selection(
         selection=[], string="New Selection"
     )
-    x_studio_selection_field_sDxoe = fields.Selection(
+    selection_field_sDxoe = fields.Selection(
         selection=[], string="New Selection"
     )
-    x_studio_terms_of_payment = fields.Many2one(
+    terms_of_payment = fields.Many2one(
         "account.payment.term", string="Terms of Payment"
     )
-    x_studio_vendor_group1 = fields.Many2one("x_vendor_group", string="Vendor Group1")
+    vendor_group1 = fields.Many2one("vendor_group", string="Vendor Group1")

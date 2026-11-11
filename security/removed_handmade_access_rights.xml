@@ -5,7 +5,7 @@
   <!--
   <record id="access_1802_vendors" model="ir.model.access">
     <field name="name">Vendors</field>
-    <field name="model_id" ref="studio_usermodel_migration.model_x_vendor_group"/>
+    <field name="model_id" ref="studio_usermodel_migration.model_vendor_group"/>
     <field name="group_id" ref="BugFix-Studio-Misc.group_g_accounting_jin_accountexecutive"/>
     <field name="perm_read" eval="True"/>
     <field name="perm_write" eval="True"/>
