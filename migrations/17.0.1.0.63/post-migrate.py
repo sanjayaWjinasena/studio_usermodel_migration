@@ -81,7 +81,7 @@ def migrate(cr, version):
         return
     env = api.Environment(cr, SUPERUSER_ID, {})
     rohana = env.ref(
-        "studio_usermodel_migration.group_studio_518_rohana", raise_if_not_found=False
+        "studio_usermodel_migration.group_studio_rohana", raise_if_not_found=False
     )
     if not rohana:
         return

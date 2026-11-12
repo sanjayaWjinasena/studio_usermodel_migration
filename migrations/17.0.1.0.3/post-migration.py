@@ -1,4 +1,4 @@
-"""v0.0.3 upgrade — declare x_customer_group + x_vendor_group models
+"""v0.0.3 upgrade — declare customer_group + vendor_group models
 and 3 res.partner FKs in Python.
 
 On Clear-DB, the corresponding state='manual' rows already exist —
